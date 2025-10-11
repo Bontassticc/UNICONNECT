@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Event | Uniconnect</title>
+    <link rel="stylesheet" href="/CSS/base.css">
+</head>
+<body>
+     <header>
+        <nav class="navbar">
+            <div class="logo"> UniConnect </div>
+            <ul class="nav-links">
+                <li><a href="/index.html"> Home</a></li>
+                <li><a href="/Events/events.html" class="active"> Events</a></li>
+                <li><a href="/Events/add-events.html" class="active"> Add Event</a></li>
+                <li><a href="/about.html"> About</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <section class="form-section">
+        <h2>Host Your Own Event</h2>
+        <form id="addEventForm">
+            <label for="eventName"> Event Name </label>
+            <input type="text" id="eventName" required>
+
+            <label for="univeristy"> University </label>
+            <input type="text" id=" univeristy" required>
+
+            <label for="eventDate"> Date </label>
+            <input type="date" id="eventDate" required>
+
+            <label for="eventLocation"> Location </label>
+            <input type="text" id="eventLocation" required>
+
+            <label for="eventCatergory"> Catergory </label>
+            <select id="eventCatergory" required>
+                <option value="academic">Academic </option>
+                <option value="social">Social</option>
+                <option value="sports">Sports</option>
+            </select>
+
+            <label for="eventDesc">Descriptions</label>
+            <textarea id="eventDesc" required></textarea>
+
+            <button type="submit" class="btn">Submit</button>
+
+            
+        </form>
+    </section>
+</body>
+</html>
