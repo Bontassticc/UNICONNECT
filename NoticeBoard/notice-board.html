@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../CSS/base.css">
+</head>
+<body>
+    <header>
+    <nav class="navbar">
+      <div class="logo">UniConnect</div>
+      <ul class="nav-links">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../Events/events.html">Events</a></li>
+        <li><a href="../Events/add-events.html">Add Event</a></li>
+        <li><a href="../NoticeBoard/notice-board.html" class="active">Notice Board</a></li>
+        <li><a href="../about.html">About</a></li>
+      </ul>
+      <div class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Calendar Section -->
+  <section class="calendar-section">
+    <h2>Notice Board 📅</h2>
+
+    
+
+    <!-- Month Navigation -->
+    <div class="calendar-nav">
+      <button id="prevMonth">&lt; Prev</button>
+      <h3 id="monthYear"></h3>
+      <button id="nextMonth">Next &gt;</button>
+    </div>
+
+    <!-- Calendar Grid -->
+    <div class="calendar" id="calendar">
+      <!-- Days will be populated dynamically -->
+    </div>
+
+    <!-- Legend -->
+    <div class="calendar-legend">
+      <span class="legend-item" style="background-color:#f2a65a">🎉 Social</span>
+      <span class="legend-item" style="background-color:#c1785c">🎓 Academic</span>
+      <span class="legend-item" style="background-color:#557c55">⚽ Sports</span>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 UniConnect Events</p>
+  </footer>
+
+   <script src="../JS/notice-board.js"></script>
+</body>
+</html>
