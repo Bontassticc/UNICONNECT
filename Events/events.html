@@ -8,33 +8,41 @@
 </head>
 <body>
 
-    <header>
-        <nav class="navbar">
-            <div class="logo"> UniConnect </div>
-            <ul class="nav-links">
-                <li><a href="/index.html"> Home</a></li>
-                <li><a href="/Events/events.html" class="active"> Events</a></li>
-                <li><a href="/Events/add-events.html"> Add Event</a></li>
-                <li><a href="/about.html"> About</a></li>
-            </ul>
-        </nav>
-    </header>
-    
-    <section class="event-search">
-        <input type="text" id="searchBar" placeholder="Search for events...">
-        <select id="filterCatergory's">
-            <option value="all"> All Catergories</option>
-             <option value="academic"> Academic</option>
-              <option value="social"> Social</option>
-               <option value="sports"> Sports</option>
+  <header>
+    <nav class="navbar">
+      <div class="logo">UniConnect</div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="events.html" class="active">Events</a></li>
+        <li><a href="add-event.html">Add Event</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul>
+      <div class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </nav>
+  </header>
 
-        </select>
-    </section>
-
-      <section class="events-list" id="events-list">
-    <!-- Events will be loaded here dynamically -->
-    <p id="noEventsMessage" style="display:none;">No events found matching your criteria.</p>
+  <!-- Search & Filter -->
+  <section class="event-search">
+    <input type="text" id="searchBar" placeholder="Search for events...">
+    <select id="filterCategory">
+      <option value="all">All Categories</option>
+      <option value="academic">🎓 Academic</option>
+      <option value="social">🎉 Social</option>
+      <option value="sports">⚽ Sports</option>
+    </select>
   </section>
+
+  <!-- Events Grid -->
+  <section class="events-list">
+    <div class="event-grid" id="events-list">
+      <!-- Dynamic event cards inserted here -->
+    </div>
+  </section>
+
 
     <footer>
         <p> 2025 UniConnect Events</p>
