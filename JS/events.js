@@ -10,13 +10,15 @@ const eventsData = [
     category: "social",
     desc: "Join us for live music by student bands & DJs under the stars!",
     date: "2025-11-12",
-    img: "https://via.placeholder.com/400x250?text=UniConnect+Event"
+    location: "Wits University",
+    img: "../Images/Party.jpg"
   },
   {
     name: "Career Fair 2025",
     category: "academic",
     desc: "Meet recruiters from top companies and learn how to stand out!",
     date: "2025-11-15",
+    location: "Wits University",
     img: "assets/images/career-fair.jpg"
   },
   {
@@ -24,6 +26,7 @@ const eventsData = [
     category: "sports",
     desc: "Cheer for your teams at the annual interfaculty sports day!",
     date: "2025-11-18",
+    location: "Wits University",
     img: "assets/images/sports-fest.jpg"
   },
   {
@@ -31,6 +34,7 @@ const eventsData = [
     category: "academic",
     desc: "A chill writing session for poets and storytellers alike.",
     date: "2025-11-10",
+    location: "Wits University",
     img: "assets/images/writing-workshop.jpg"
   },
   {
@@ -38,14 +42,16 @@ const eventsData = [
     category: "social",
     desc: "Outdoor cinema night with popcorn, beanbags, and fairy lights!",
     date: "2025-11-20",
-    img: "assets/images/movie-night.jpg"
+    location: "Wits University",
+    img: "../Images/Movie under the stars.jpg"
   },
   {
     name: "Wellness Yoga Morning",
     category: "social",
     desc: "Free sunrise yoga for students! Bring a mat and good vibes.",
     date: "2025-11-09",
-    img: "assets/images/yoga-morning.jpg"
+    location: "Wits University",
+    img: "../Images/yoga.jpg"
   },
 
   {
@@ -53,13 +59,15 @@ const eventsData = [
     category: "academic",
     desc: "Meet recruiters from top companies and learn how to stand out!",
     date: "2025-11-15",
-    img: "https://via.placeholder.com/400x250?text=Career+Fair"
+    location: "Wits University",
+    img: "../Images/Career Fair.jpg"
   },
   {
     name: "CV & LinkedIn Workshop",
     category: "academic",
     desc: "Polish your professional profile and get tips from career advisors.",
     date: "2025-10-20",
+    location: "Wits University",
     img: "https://via.placeholder.com/400x250?text=CV+Workshop"
   },
   {
@@ -67,13 +75,15 @@ const eventsData = [
     category: "academic",
     desc: "A 48-hour challenge to code creative solutions for real-world issues.",
     date: "2025-11-02",
-    img: "https://via.placeholder.com/400x250?text=Hackathon"
+    location: "Wits University",
+    img: "../Images/Hackathon.jpg"
   },
   {
     name: "Design & Animation Expo",
     category: "academic",
     desc: "A showcase of student projects in animation, design, and 3D art.",
     date: "2025-10-28",
+    location: "Wits University",
     img: "https://via.placeholder.com/400x250?text=Design+Expo"
   },
   {
@@ -81,6 +91,7 @@ const eventsData = [
     category: "academic",
     desc: "Empowering women innovators and leaders in the tech space.",
     date: "2025-10-18",
+    location: "Wits University",
     img: "https://via.placeholder.com/400x250?text=Women+in+Tech"
   },
   {
@@ -88,6 +99,7 @@ const eventsData = [
     category: "academic",
     desc: "Student entrepreneurs pitch ideas to local investors and mentors.",
     date: "2025-10-30",
+    location: "Wits University",
     img: "https://via.placeholder.com/400x250?text=Startup+Pitch"
   },
   {
@@ -95,6 +107,7 @@ const eventsData = [
     category: "academic",
     desc: "Grab your laptop, get free coffee refills, and study with peers.",
     date: "2025-10-10",
+    location: "Wits University",
     img: "https://via.placeholder.com/400x250?text=Study+Jam"
   },
   {
@@ -102,6 +115,7 @@ const eventsData = [
     category: "academic",
     desc: "Stress management, study tips, and free snacks for students!",
     date: "2025-10-25",
+    location: "Wits University",
     img: "https://via.placeholder.com/400x250?text=Exam+Bootcamp"
   },
   {
@@ -109,6 +123,7 @@ const eventsData = [
     category: "academic",
     desc: "Overcome stage fright and speak confidently at any event.",
     date: "2025-10-14",
+    location: "Wits University",
     img: "https://via.placeholder.com/400x250?text=Public+Speaking"
   },
   {
@@ -116,6 +131,7 @@ const eventsData = [
     category: "academic",
     desc: "Discover groundbreaking student research across faculties.",
     date: "2025-09-27",
+    location: "Wits University",
     img: "https://via.placeholder.com/400x250?text=Research+Showcase"
   },
 
@@ -125,6 +141,7 @@ const eventsData = [
     category: "social",
     desc: "Live performances from student bands, DJs, and guest artists.",
     date: "2025-11-12",
+    location: "Wits University",
     img: "https://via.placeholder.com/400x250?text=Music+Night"
   },
   {
@@ -132,13 +149,15 @@ const eventsData = [
     category: "social",
     desc: "Celebrate SA’s diversity with food, games, and live performances!",
     date: "2025-09-24",
-    img: "https://via.placeholder.com/400x250?text=Heritage+Braai"
+    location: "Wits University",
+    img: "../Images/Heritage Day.jpg"
   },
   {
     name: "Freshers Bash",
     category: "social",
     desc: "Welcome new students with a night of music, lights, and laughter.",
     date: "2025-02-10",
+    location: "Wits University",
     img: "https://via.placeholder.com/400x250?text=Freshers+Bash"
   },
   {
@@ -146,6 +165,7 @@ const eventsData = [
     category: "social",
     desc: "Outdoor cinema night with popcorn, beanbags, and fairy lights!",
     date: "2025-11-20",
+    location: "Wits University",
     img: "https://via.placeholder.com/400x250?text=Movie+Night"
   },
   {
@@ -153,6 +173,7 @@ const eventsData = [
     category: "social",
     desc: "Taste, dance, and explore the cultures that make up our campus!",
     date: "2025-09-16",
+    location: "Wits University",
     img: "https://via.placeholder.com/400x250?text=Cultural+Fair"
   },
   {
@@ -160,6 +181,7 @@ const eventsData = [
     category: "social",
     desc: "Inter-residence games night — Uno, 30 Seconds, Jenga, and more!",
     date: "2025-09-28",
+    location: "Wits University",
     img: "https://via.placeholder.com/400x250?text=Games+Night"
   },
   {
@@ -167,6 +189,7 @@ const eventsData = [
     category: "social",
     desc: "Bring your blanket, snacks, and besties for a chill evening vibe.",
     date: "2025-09-30",
+    location: "Wits University",
     img: "https://via.placeholder.com/400x250?text=Picnic+Evening"
   },
   {
@@ -174,6 +197,7 @@ const eventsData = [
     category: "social",
     desc: "Grab a headset and dance to your own rhythm under neon lights!",
     date: "2025-10-03",
+    location: "Wits University",
     img: "https://via.placeholder.com/400x250?text=Silent+Disco"
   },
   {
@@ -181,6 +205,7 @@ const eventsData = [
     category: "social",
     desc: "Dress to impress or scare — prizes for the best costume!",
     date: "2025-10-31",
+    location: "Wits University",
     img: "https://via.placeholder.com/400x250?text=Halloween+Bash"
   },
   {
@@ -188,6 +213,7 @@ const eventsData = [
     category: "social",
     desc: "Party under the stars with campus DJs spinning your faves.",
     date: "2025-10-07",
+    location: "Wits University",
     img: "https://via.placeholder.com/400x250?text=DJ+Night"
   },
   {
@@ -195,6 +221,7 @@ const eventsData = [
     category: "social",
     desc: "Celebrate love, diversity, and authenticity with us 🌈",
     date: "2025-10-26",
+    location: "Wits University",
     img: "https://via.placeholder.com/400x250?text=Pride+Night"
   },
 
@@ -269,6 +296,7 @@ const eventsData = [
     category: "wellness",
     desc: "Workshops, self-care talks, and free counselling sign-ups.",
     date: "2025-10-02",
+    location: "Wits University",
     img: "https://via.placeholder.com/400x250?text=Mental+Health+Week"
   },
   {
@@ -276,6 +304,7 @@ const eventsData = [
     category: "wellness",
     desc: "Take a break, pet a pup, and ease your stress before exams!",
     date: "2025-10-06",
+    location: "Wits University",
     img: "https://via.placeholder.com/400x250?text=Therapy+Dogs"
   },
   {
@@ -283,6 +312,7 @@ const eventsData = [
     category: "wellness",
     desc: "Guided journaling, skincare tips, and soft music — all welcome.",
     date: "2025-10-13",
+    location: "Wits University",
     img: "https://via.placeholder.com/400x250?text=Self+Care"
   },
   {
@@ -290,6 +320,7 @@ const eventsData = [
     category: "wellness",
     desc: "Join us to keep our campus clean and green. Free T-shirts!",
     date: "2025-09-22",
+    location: "Wits University",
     img: "https://via.placeholder.com/400x250?text=Clean+Up"
   },
 
@@ -299,6 +330,7 @@ const eventsData = [
     category: "sports",
     desc: "Soccer, netball, rugby, and volleyball battles between faculties!",
     date: "2025-09-26",
+    location: "Wits University",
     img: "https://via.placeholder.com/400x250?text=Sports+Day"
   },
   {
@@ -306,6 +338,7 @@ const eventsData = [
     category: "sports",
     desc: "A full-body HIIT session open to all students. No excuses!",
     date: "2025-10-08",
+    location: "Wits University",
     img: "https://via.placeholder.com/400x250?text=Bootcamp"
   },
   {
@@ -313,6 +346,7 @@ const eventsData = [
     category: "sports",
     desc: "Run, jog, or walk — all proceeds go to student charities.",
     date: "2025-10-09",
+    location: "Wits University",
     img: "https://via.placeholder.com/400x250?text=Fun+Run"
   },
   {
@@ -320,6 +354,7 @@ const eventsData = [
     category: "sports",
     desc: "Compete in FIFA, Tekken, and more for cash prizes.",
     date: "2025-10-15",
+    location: "Wits University",
     img: "https://via.placeholder.com/400x250?text=Esports"
   },
   {
@@ -327,6 +362,7 @@ const eventsData = [
     category: "sports",
     desc: "Grab your team and duck, dive, and dodge your way to victory!",
     date: "2025-10-24",
+    location: "Wits University",
     img: "https://via.placeholder.com/400x250?text=Dodgeball"
   }
 ];
@@ -350,18 +386,50 @@ function getCategoryColor(category) {
   }
 }
 
-// 🖼️ Function to display events
+// ===== HOMEPAGE FEATURED EVENTS =====
+function displayFeaturedEvents() {
+  const featuredSection = document.getElementById("featured-events");
+  if (!featuredSection) return;
+
+  const today = new Date();
+  const featuredEvents = eventsData
+    .filter(event => event.featured || new Date(event.date) >= today)
+    .slice(0, 3);
+
+  featuredEvents.forEach(event => {
+    const card = document.createElement("div");
+    card.className = "event-card";
+    card.innerHTML = `
+      <div class="event-image">
+        <img src="${event.img}" alt="${event.name}">
+      </div>
+      <div class="event-info">
+        <span class="event-category" style="background:${getCategoryColor(event.category)}">${event.category}</span>
+        <h3>${event.name}</h3>
+        <p class="event-date">📅 ${new Date(event.date).toDateString()}</p>
+      </div>
+    `;
+    card.addEventListener("click", () => {
+      window.location.href = "Events/events.html";
+    });
+    featuredSection.appendChild(card);
+  });
+}
+
+// ===== EVENTS PAGE FULL LIST + MODAL =====
 function displayEvents(events) {
-  eventsList.innerHTML = "";
+  const eventsList = document.getElementById("events-list");
+  if (!eventsList) return;
 
   const modal = document.getElementById("eventModal");
   const modalBody = document.getElementById("modal-body");
   const closeBtn = document.querySelector(".close");
 
+  eventsList.innerHTML = "";
+
   events.forEach(event => {
     const card = document.createElement("div");
     card.className = "event-card";
-
     card.innerHTML = `
       <div class="event-image">
         <img src="${event.img}" alt="${event.name}">
@@ -371,17 +439,19 @@ function displayEvents(events) {
         <h3>${event.name}</h3>
         <p>${event.desc}</p>
         <p class="event-date">📅 ${new Date(event.date).toDateString()}</p>
+        <p class="event-location">📍 ${event.location}</p>
       </div>
     `;
-
-    // Make card clickable
+    
     card.addEventListener("click", () => {
+      if (!modal || !modalBody) return;
       modalBody.innerHTML = `
         <h1>${event.name}</h1>
         <img src="${event.img}" alt="${event.name}" style="width:100%;border-radius:8px;">
         <span class="event-category" style="background:${getCategoryColor(event.category)};padding:5px 10px;border-radius:5px;margin-top:10px;display:inline-block;">${event.category}</span>
         <p style="margin-top:15px;">${event.desc}</p>
         <p style="font-weight:bold;">📅 ${new Date(event.date).toDateString()}</p>
+        <p>📍 ${event.location}</p>
       `;
       modal.style.display = "block";
     });
@@ -389,16 +459,20 @@ function displayEvents(events) {
     eventsList.appendChild(card);
   });
 
-  // Close modal on click X
-  closeBtn.addEventListener("click", () => modal.style.display = "none");
-
-  // Close modal on click outside
-  window.addEventListener("click", e => {
-    if (e.target == modal) modal.style.display = "none";
-  });
+  if (closeBtn && modal) {
+    closeBtn.addEventListener("click", () => (modal.style.display = "none"));
+    window.addEventListener("click", e => {
+      if (e.target == modal) modal.style.display = "none";
+    });
+  }
 }
-// 🧩 Filter Logic
+
+// ===== FILTER LOGIC =====
 function filterEvents() {
+  const searchBar = document.getElementById("searchBar");
+  const filterCategory = document.getElementById("filterCategory");
+  if (!searchBar || !filterCategory) return;
+
   const searchText = searchBar.value.toLowerCase();
   const category = filterCategory.value;
 
@@ -411,9 +485,18 @@ function filterEvents() {
   displayEvents(filtered);
 }
 
-// 🔍 Listeners
-searchBar.addEventListener("input", filterEvents);
-filterCategory.addEventListener("change", filterEvents);
+// ===== CONDITIONAL EXECUTION =====
+if (document.getElementById("featured-events")) {
+  displayFeaturedEvents();
+}
 
-// 🚀 Initial Load
-displayEvents(eventsData);
+if (document.getElementById("events-list")) {
+  displayEvents(eventsData);
+
+  const searchBar = document.getElementById("searchBar");
+  const filterCategory = document.getElementById("filterCategory");
+  if (searchBar && filterCategory) {
+    searchBar.addEventListener("input", filterEvents);
+    filterCategory.addEventListener("change", filterEvents);
+  }
+}
