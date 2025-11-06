@@ -404,3 +404,191 @@ footer {
   from {opacity: 0; transform: translateY(-20px);}
   to {opacity: 1; transform: translateY(0);}
 }
+
+/* ===== FEATURED EVENTS (small cards) ===== */
+#featured-events {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+  margin: 30px 0;
+}
+
+#featured-events .event-card {
+  width: 250px;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+  transition: transform 0.2s, box-shadow 0.2s;
+  cursor: pointer;
+  background-color: #fff;
+}
+
+#featured-events .event-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0,0,0,0.15);
+}
+
+#featured-events .event-image img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+}
+
+#featured-events .event-info {
+  padding: 10px 12px;
+}
+
+#featured-events .event-info h3 {
+  font-size: 1.1rem;
+  margin: 5px 0;
+}
+
+#featured-events .event-info p {
+  font-size: 0.9rem;
+  margin: 3px 0;
+}
+
+#featured-events .event-category {
+  font-size: 0.75rem;
+  padding: 3px 8px;
+  border-radius: 5px;
+  display: inline-block;
+  margin-bottom: 5px;
+  text-transform: capitalize;
+}
+
+/* ===== CATEGORIES GRID ===== */
+.categories {
+  text-align: center;
+  margin: 50px 20px;
+}
+
+.categories h2 {
+  margin-bottom: 20px;
+}
+
+.category-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+}
+
+.category-card {
+  width: 150px;
+  padding: 20px 10px;
+  border-radius: 10px;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.2s;
+  text-align: center;
+}
+
+/* Category colors */
+.category-card.academic { background-color: #6c5ce7; }
+.category-card.social { background-color: #fd79a8; }
+.category-card.sports { background-color: #ffeaa7; color: #000; }
+.category-card.creative { background-color: #00cec9; }
+.category-card.wellness { background-color: #fab1a0; }
+
+.category-card:hover {
+  transform: translateY(-5px);
+  opacity: 0.9;
+}
+
+/* ===== SPOTLIGHT EVENT ===== */
+.spotlight-event {
+  text-align: center;
+  margin: 50px 20px;
+}
+
+.spotlight-card {
+  display: flex;
+  max-width: 800px;
+  margin: 0 auto;
+  background-color: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  transition: transform 0.2s;
+}
+
+.spotlight-card:hover {
+  transform: translateY(-5px);
+}
+
+.spotlight-card img {
+  width: 300px;
+  height: 200px;
+  object-fit: cover;
+}
+
+.spotlight-info {
+  padding: 20px;
+  text-align: left;
+}
+
+.spotlight-info h3 {
+  margin-bottom: 10px;
+}
+
+.spotlight-info p {
+  margin-bottom: 8px;
+}
+
+.spotlight-info .btn-small {
+  padding: 5px 12px;
+  font-size: 0.9rem;
+  background-color: #fd79a8;
+  color: #fff;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: all 0.2s;
+}
+
+.spotlight-info .btn-small:hover {
+  background-color: #e84393;
+}
+
+/* ===== FOOTER ===== */
+footer {
+  text-align: center;
+  padding: 25px 20px;
+  background-color: #2d3436;
+  color: #fff;
+  margin-top: 50px;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .spotlight-card {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .spotlight-card img {
+    width: 100%;
+    height: 200px;
+  }
+
+  .spotlight-info {
+    text-align: center;
+  }
+
+  #featured-events .event-card {
+    width: 45%;
+  }
+}
+
+@media (max-width: 480px) {
+  #featured-events .event-card {
+    width: 90%;
+  }
+
+  .category-card {
+    width: 45%;
+    margin-bottom: 10px;
+  }
+}
