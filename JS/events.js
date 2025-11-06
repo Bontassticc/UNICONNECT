@@ -19,7 +19,7 @@ const eventsData = [
     desc: "Meet recruiters from top companies and learn how to stand out!",
     date: "2025-11-15",
     location: "Wits University",
-    img: "assets/images/career-fair.jpg"
+    img:"../Images/Career Fair.jpg"
   },
   {
     name: "Sports Festival",
