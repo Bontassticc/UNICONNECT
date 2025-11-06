@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>UniConnect | Events </title>
     <link rel="stylesheet" href="../CSS/base.css">
+   
 </head>
 <body>
 
@@ -21,23 +22,37 @@
     </header>
     
     <section class="event-search">
-        <input type="text" id="searchBar" placeholder="Search for events...">
-        <select id="filterCatergory's">
+        <input type="text" id="searchBar"placeholder="Search for events...">
+        <select id="filterCategory">
             <option value="all"> All Catergories</option>
              <option value="academic"> Academic</option>
               <option value="social"> Social</option>
                <option value="sports"> Sports</option>
+               <option value="creative"> Creative</option>
+               <option value="wellness"> Wellness</option>
 
         </select>
     </section>
 
       <section class="events-list" id="events-list">
     <!-- Events will be loaded here dynamically -->
-    <p id="noEventsMessage" style="display:none;">No events found matching your criteria.</p>
+   
   </section>
+
+  <!-- Event Modal -->
+<div id="eventModal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <div id="modal-body"></div>
+  </div>
+</div>
+
+  
 
     <footer>
         <p> 2025 UniConnect Events</p>
     </footer>
+
+    <script src="../JS/events.js"></script>
 </body>
 </html>
