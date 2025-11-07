@@ -21,14 +21,6 @@ const eventsData = [
     location: "Wits University",
     img:"../Images/Career Fair.jpg"
   },
-  {
-    name: "Sports Festival",
-    category: "sports",
-    desc: "Cheer for your teams at the annual interfaculty sports day!",
-    date: "2025-11-18",
-    location: "Wits University",
-    img: "assets/images/sports-fest.jpg"
-  },
   
   {
     name: "Movie Under the Stars",
@@ -55,31 +47,7 @@ const eventsData = [
     location: "Wits University",
     img: "https://via.placeholder.com/400x250?text=Design+Expo"
   },
-  {
-    name: "Women in Tech Conference",
-    category: "academic",
-    desc: "Empowering women innovators and leaders in the tech space.",
-    date: "2025-10-18",
-    location: "Wits University",
-    img: "https://via.placeholder.com/400x250?text=Women+in+Tech"
-  },
 
-  {
-    name: "Exam Survival Bootcamp",
-    category: "academic",
-    desc: "Stress management, study tips, and free snacks for students!",
-    date: "2025-10-25",
-    location: "Wits University",
-    img: "https://via.placeholder.com/400x250?text=Exam+Bootcamp"
-  },
-  {
-    name: "Public Speaking 101",
-    category: "academic",
-    desc: "Overcome stage fright and speak confidently at any event.",
-    date: "2025-10-14",
-    location: "Wits University",
-    img: "https://via.placeholder.com/400x250?text=Public+Speaking"
-  },
   {
     name: "Research Poster Showcase",
     category: "academic",
@@ -90,15 +58,6 @@ const eventsData = [
   },
 
   // 🎶 Social & Campus Life
-
-  {
-    name: "Heritage Day Braai",
-    category: "social",
-    desc: "Celebrate SA’s diversity with food, games, and live performances!",
-    date: "2025-09-24",
-    location: "Wits University",
-    img: "../Images/Heritage Day.jpg"
-  },
   {
     name: "Freshers Bash",
     category: "social",
@@ -108,14 +67,6 @@ const eventsData = [
     img: "https://via.placeholder.com/400x250?text=Freshers+Bash"
   },
 
-  {
-    name: "Cultural Day Food Fair",
-    category: "social",
-    desc: "Taste, dance, and explore the cultures that make up our campus!",
-    date: "2025-09-16",
-    location: "Wits University",
-    img: "https://via.placeholder.com/400x250?text=Cultural+Fair"
-  },
   {
     name: "Res vs Res Games Night",
     category: "social",
@@ -132,14 +83,7 @@ const eventsData = [
     location: "Wits University",
     img: "https://via.placeholder.com/400x250?text=Picnic+Evening"
   },
-  {
-    name: "Silent Disco",
-    category: "social",
-    desc: "Grab a headset and dance to your own rhythm under neon lights!",
-    date: "2025-10-03",
-    location: "Wits University",
-    img: "https://via.placeholder.com/400x250?text=Silent+Disco"
-  },
+  
   {
     name: "Halloween Costume Bash",
     category: "social",
@@ -149,23 +93,9 @@ const eventsData = [
     img: "https://via.placeholder.com/400x250?text=Halloween+Bash"
   },
 
-  {
-    name: "Pride Celebration & Queer Film Night",
-    category: "social",
-    desc: "Celebrate love, diversity, and authenticity with us 🌈",
-    date: "2025-10-26",
-    location: "Wits University",
-    img: "https://via.placeholder.com/400x250?text=Pride+Night"
-  },
 
   // 🎨 Creative & Cultural
-  {
-    name: "Poetry & Open Mic Night",
-    category: "creative",
-    desc: "Step up and share your voice — spoken word, music, and vibes.",
-    date: "2025-10-05",
-    img: "https://via.placeholder.com/400x250?text=Poetry+Night"
-  },
+
   {
     name: "Student Art Exhibition",
     category: "creative",
@@ -173,14 +103,6 @@ const eventsData = [
     date: "2025-10-21",
     img: "https://via.placeholder.com/400x250?text=Art+Exhibition"
   },
-  {
-    name: "Fashion Show: Sustainable Style",
-    category: "creative",
-    desc: "Showcasing eco-friendly designs by student creators.",
-    date: "2025-10-19",
-    img: "https://via.placeholder.com/400x250?text=Fashion+Show"
-  },
-  
   {
     name: "Film & Chill: African Cinema Night",
     category: "creative",
@@ -209,40 +131,8 @@ const eventsData = [
     img: "https://via.placeholder.com/400x250?text=Mental+Health+Week"
   },
   
-  {
-    name: "Self-Care Sunday",
-    category: "wellness",
-    desc: "Guided journaling, skincare tips, and soft music — all welcome.",
-    date: "2025-10-13",
-    location: "Wits University",
-    img: "https://via.placeholder.com/400x250?text=Self+Care"
-  },
-  {
-    name: "Campus Clean-Up Challenge",
-    category: "wellness",
-    desc: "Join us to keep our campus clean and green. Free T-shirts!",
-    date: "2025-09-22",
-    location: "Wits University",
-    img: "https://via.placeholder.com/400x250?text=Clean+Up"
-  },
 
   // ⚽ Sports & Competition
-  {
-    name: "Interfaculty Sports Day",
-    category: "sports",
-    desc: "Soccer, netball, rugby, and volleyball battles between faculties!",
-    date: "2025-09-26",
-    location: "Wits University",
-    img: "https://via.placeholder.com/400x250?text=Sports+Day"
-  },
-  {
-    name: "Fitness Bootcamp Challenge",
-    category: "sports",
-    desc: "A full-body HIIT session open to all students. No excuses!",
-    date: "2025-10-08",
-    location: "Wits University",
-    img: "https://via.placeholder.com/400x250?text=Bootcamp"
-  },
   {
     name: "5K Fun Run",
     category: "sports",
@@ -259,14 +149,7 @@ const eventsData = [
     location: "Wits University",
     img: "https://via.placeholder.com/400x250?text=Esports"
   },
-  {
-    name: "Dodgeball Night",
-    category: "sports",
-    desc: "Grab your team and duck, dive, and dodge your way to victory!",
-    date: "2025-10-24",
-    location: "Wits University",
-    img: "https://via.placeholder.com/400x250?text=Dodgeball"
-  }
+
 ];
 
 
@@ -415,6 +298,70 @@ document.querySelectorAll('.motto-word').forEach(word => {
     }
   });
 });
+
+// ===== EXTERNAL TICKETMASTER EVENTS =====
+async function fetchExternalEvents(city = "") {
+  const externalDiv = document.getElementById("external-events");
+  if (!externalDiv) return;
+
+  externalDiv.innerHTML = "<p>Loading external events...</p>";
+
+  const apiKey = "5ooJdSWCZ0yHV2SFYft8JbQHPwUpeWpn"; // replace with your key
+  const url = `https://app.ticketmaster.com/discovery/v2/events.json?countryCode=ZA&size=10&apikey=${apiKey}${city ? `&city=${city}` : ""}`;
+
+  try {
+    const response = await fetch(url);
+    const data = await response.json();
+
+    // Check if events exist
+    const events = data._embedded?.events || [];
+    if (!events.length) {
+      externalDiv.innerHTML = "<p>No external events found for this city.</p>";
+      return;
+    }
+
+    externalDiv.innerHTML = ""; // clear loading message
+
+    events.forEach(event => {
+      const card = document.createElement("div");
+      card.className = "event-card";
+      const img = event.images?.[0]?.url || "https://via.placeholder.com/400x250";
+
+      const startDate = event.dates?.start?.localDate || "Date TBD";
+      const venue = event._embedded?.venues?.[0]?.name || "Location TBD";
+
+      card.innerHTML = `
+        <div class="event-image">
+          <img src="${img}" alt="${event.name}">
+        </div>
+        <div class="event-info">
+          <span class="event-category" style="background:#555">External</span>
+          <h3>${event.name}</h3>
+          <p class="event-date">📅 ${startDate}</p>
+          <p class="event-location">📍 ${venue}</p>
+          <a href="${event.url}" target="_blank" class="btn btn-small">View Event</a>
+        </div>
+      `;
+
+      externalDiv.appendChild(card);
+    });
+  } catch (err) {
+    console.error(err);
+    externalDiv.innerHTML = "<p>Failed to load external events.</p>";
+  }
+}
+
+// Optional: City filter
+const citySelect = document.getElementById("externalCityFilter");
+if (citySelect) {
+  citySelect.addEventListener("change", () => {
+    fetchExternalEvents(citySelect.value);
+  });
+}
+
+// Call initially (all SA events)
+fetchExternalEvents();
+
 
 
 // ===== CONDITIONAL EXECUTION =====
