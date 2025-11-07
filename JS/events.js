@@ -3,7 +3,7 @@ const searchBar = document.getElementById("searchBar");
 const filterCategory = document.getElementById("filterCategory");
 const eventsList = document.getElementById("events-list");
 
-// 🎉 Demo Event Data
+// Event Data
 const eventsData = [
   {
     name: "Campus Music Night",
@@ -48,7 +48,7 @@ const eventsData = [
     img: "../Images/animation.jpg"
   },
 
-  // 🎶 Social & Campus Life
+  // Social & Campus Life
   {
     name: "Freshers Bash",
     category: "social",

@@ -24,46 +24,56 @@
     </div>
   </div>
 </header>
-<!-- Calendar / Noticeboard Section -->
+
+
+<!-- ===== NOTICE BOARD PAGE ===== -->
 <section class="noticeboard">
-  <h2>📌 University Notice Board</h2>
 
-  <!-- Calendar Section -->
-  <div class="calendar-container">
- <!-- Month Navigation --> <div class="calendar-nav"> 
-    <button id="prevMonth">&lt; Prev</button> 
-    <h3 id="monthYear"></h3> <button id="nextMonth">Next &gt;</button> 
-</div> <!-- Calendar Grid --> <div class="calendar" id="calendar"> <!-- Days will be populated dynamically --> </div>
+  <h1 class="page-title">📋 University Notice Board</h1>
+  <p class="page-subtitle">Stay up to date with events, weather, and campus alerts.</p>
 
-    <!-- Legend -->
-    <div class="calendar-legend">
-      <span class="legend-item" style="background-color:#f2a65a">🎉 Social</span>
-      <span class="legend-item" style="background-color:#c1785c">🎓 Academic</span>
-      <span class="legend-item" style="background-color:#557c55">⚽ Sports</span>
+  <div class="noticeboard-grid">
+
+    <!-- 🗓️ Calendar Section -->
+    <div class="card calendar-section glass-card">
+      <h2>Campus Calendar</h2>
+      <div class="calendar-nav">
+        <button id="prevMonth">&lt;</button>
+        <h3 id="monthYear"></h3>
+        <button id="nextMonth">&gt;</button>
+      </div>
+      <div id="calendar" class="calendar"></div>
     </div>
-  </div>
 
-  <!-- Quick Announcements Section -->
-  <div class="quick-announcements">
-    <h3>📢 Quick Announcements</h3>
-    <div class="announcement-cards">
-      <div class="announcement-card">
-        <p>⚠ Mid-sem break begins on the 24th.</p>
-        <span class="announcement-date">🗓️ 24 November 2025</span>
-      </div>
-      <div class="announcement-card">
-        <p>🧠 Study night at the library this Friday!</p>
-        <span class="announcement-date">🗓️ 8 November 2025</span>
-      </div>
-      <div class="announcement-card">
-        <p>🎬 Movie Night hosted by Media Club on Saturday.</p>
-        <span class="announcement-date">🗓️ 9 November 2025</span>
-      </div>
-      <!-- Additional cards can be added here -->
+    <!-- 📍 Map Section -->
+    <div class="card map-section glass-card">
+      <h2>Event Map</h2>
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3585.611640442558!2d28.0300742749204!3d-26.1919471670666!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1e950b8e3c1b7a7f%3A0x8cf69f604bcc1f5b!2sUniversity%20of%20the%20Witwatersrand!5e0!3m2!1sen!2sza!4v1688592922269!5m2!1sen!2sza"
+        width="100%" height="300" style="border:0; border-radius: 12px;" allowfullscreen="" loading="lazy">
+      </iframe>
     </div>
+
+    <!-- 🌦️ Weather Section -->
+    <div class="card weather-section glass-card">
+      <h2>Current Weather</h2>
+      <div id="weather-info">
+        <p>Loading weather data...</p>
+      </div>
+    </div>
+
+    <!-- 📢 Announcements Section -->
+    <div class="card announcements-section glass-card">
+      <h2>Campus Announcements</h2>
+      <ul id="announcements-list">
+        <li>⚠ Mid-sem break begins on the 24th.</li>
+        <li>🧠 Study night at the library this Friday!</li>
+        <li>🎬 Movie Night hosted by Media Club on Saturday.</li>
+      </ul>
+    </div>
+
   </div>
 </section>
-
 
   <footer>
     <p>© 2025 UniConnect Events</p>

@@ -1181,7 +1181,7 @@ footer {
 }
 
 .about-hero .hero-content h1 {
-  font-size: 4rem;
+  font-size: rem;
   margin-bottom: 3rem;
 }
 
@@ -1330,4 +1330,96 @@ footer {
   font-weight: bold;
   text-decoration: underline;
 }
+
+.noticeboard {
+  padding: 3rem 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.page-title {
+  text-align: center;
+  font-size: 2.2rem;
+  color: var(--color-primary);
+  font-family: var(--font-secondary);
+  margin-bottom: 0.5rem;
+}
+
+.page-subtitle {
+  text-align: center;
+  color: var(--color-light-text);
+  margin-bottom: 2rem;
+}
+
+/* ===== NOTICE BOARD GRID ===== */
+.noticeboard-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1.5rem;
+  padding: 2rem;
+  position: relative;
+  z-index: 1;
+}
+
+/* ===== CARD STYLING ===== */
+.glass-card {
+  background: rgba(255, 255, 255, 0.85);
+  border-radius: 16px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  z-index: 2;
+}
+
+.glass-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* ===== CALENDAR SECTION ===== */
+.calendar-section {
+  z-index: 3; /* keep this one on top if anything overlaps */
+}
+
+/* ===== MAP ===== */
+.map-section iframe {
+  width: 100%;
+  height: 300px;
+  border-radius: 12px;
+  border: none;
+  z-index: 1;
+}
+
+
+.announcements-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.announcements-section li {
+  background: rgba(255,255,255,0.1);
+  padding: 0.6rem;
+  border-radius: 8px;
+  margin-bottom: 0.5rem;
+}
+
+.has-event {
+  background: rgba(242, 166, 90, 0.3);
+  border: 1px solid rgba(242, 166, 90, 0.6);
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.has-event:hover {
+  background: rgba(242, 166, 90, 0.5);
+  transform: scale(1.05);
+}
+
+.weather-details {
+  text-align: center;
+  line-height: 1.6;
+}
+
 

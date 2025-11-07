@@ -1,85 +1,107 @@
+// ===== NOTICE BOARD PAGE JS =====
+
+// --- 1. Dynamic Calendar Setup ---
 const calendar = document.getElementById("calendar");
 const monthYear = document.getElementById("monthYear");
-const prevMonth = document.getElementById("prevMonth");
-const nextMonth = document.getElementById("nextMonth");
+const prevMonthBtn = document.getElementById("prevMonth");
+const nextMonthBtn = document.getElementById("nextMonth");
 
 let currentDate = new Date();
 
-// Sample events data
 const eventsData = [
-  {name:"Campus Music Night", category:"social", date:"2025-11-05"},
-  {name:"Career Fair", category:"academic", date:"2025-11-12"},
-  {name:"Sports Fest", category:"sports", date:"2025-11-20"},
-  {name:"Art Workshop", category:"social", date:"2025-11-25"}
+  { date: "2025-11-10", title: "Study Night" },
+  { date: "2025-11-15", title: "Campus Festival" },
+  { date: "2025-11-25", title: "Midterm Break Starts" },
 ];
 
-// Helper: get color by category
-function getCategoryColor(category){
-  switch(category){
-    case "social": return "#f2a65a";
-    case "academic": return "#c1785c";
-    case "sports": return "#557c55";
-    default: return "#ccc";
-  }
-}
-
-// Render calendar
-function renderCalendar(date){
+function renderCalendar(date) {
   calendar.innerHTML = "";
+
   const year = date.getFullYear();
   const month = date.getMonth();
 
-  monthYear.textContent = date.toLocaleString('default', {month:'long', year:'numeric'});
+  const firstDay = new Date(year, month, 1);
+  const lastDay = new Date(year, month + 1, 0);
+  const startDay = firstDay.getDay();
 
-  // First day of month
-  const firstDay = new Date(year, month, 1).getDay();
-  const daysInMonth = new Date(year, month+1, 0).getDate();
+  const monthNames = [
+    "January", "February", "March", "April", "May", "June",
+    "July", "August", "September", "October", "November", "December"
+  ];
+  monthYear.textContent = `${monthNames[month]} ${year}`;
 
-  // Fill empty days
-  for(let i=0;i<firstDay;i++){
-    const emptyCell = document.createElement("div");
-    emptyCell.classList.add("calendar-day");
-    calendar.appendChild(emptyCell);
+  // Fill empty spaces before the first day
+  for (let i = 0; i < startDay; i++) {
+    const empty = document.createElement("div");
+    calendar.appendChild(empty);
   }
 
   // Fill days
-  for(let day=1; day<=daysInMonth; day++){
-    const dayCell = document.createElement("div");
-    dayCell.classList.add("calendar-day");
+  for (let i = 1; i <= lastDay.getDate(); i++) {
+    const day = document.createElement("div");
+    day.textContent = i;
 
-    const dayNumber = document.createElement("div");
-    dayNumber.classList.add("day-number");
-    dayNumber.textContent = day;
-    dayCell.appendChild(dayNumber);
+    const fullDate = `${year}-${String(month + 1).padStart(2, "0")}-${String(i).padStart(2, "0")}`;
+    const event = eventsData.find(e => e.date === fullDate);
 
-    // Check events for this day
-    const dayStr = `${year}-${String(month+1).padStart(2,'0')}-${String(day).padStart(2,'0')}`;
-    const dayEvents = eventsData.filter(e => e.date === dayStr);
+    if (event) {
+      day.classList.add("has-event");
+      day.title = event.title;
+      day.innerHTML = `<strong>${i}</strong><br><small>${event.title}</small>`;
+    }
 
-    dayEvents.forEach(e=>{
-      const badge = document.createElement("span");
-      badge.classList.add("event-badge");
-      badge.style.backgroundColor = getCategoryColor(e.category);
-      badge.textContent = e.name;
-      badge.title = e.name; // tooltip
-      dayCell.appendChild(badge);
-    });
-
-    calendar.appendChild(dayCell);
+    calendar.appendChild(day);
   }
 }
 
-// Initial render
+prevMonthBtn.addEventListener("click", () => {
+  currentDate.setMonth(currentDate.getMonth() - 1);
+  renderCalendar(currentDate);
+});
+
+nextMonthBtn.addEventListener("click", () => {
+  currentDate.setMonth(currentDate.getMonth() + 1);
+  renderCalendar(currentDate);
+});
+
 renderCalendar(currentDate);
 
-// Navigation
-prevMonth.addEventListener("click", ()=>{
-  currentDate.setMonth(currentDate.getMonth()-1);
-  renderCalendar(currentDate);
-});
+// --- 2. Weather Widget Setup ---
+const weatherInfo = document.getElementById("weather-info");
+const city = "Johannesburg"; // change to your campus city
+const apiKey = "7a0e96b40e23a80fd80c22b124e285f1"; // <-- add your API key here
 
-nextMonth.addEventListener("click", ()=>{
-  currentDate.setMonth(currentDate.getMonth()+1);
-  renderCalendar(currentDate);
-});
+async function loadWeather() {
+  try {
+    const res = await fetch(
+      `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`
+    );
+    const data = await res.json();
 
+    if (data.cod === 200) {
+      weatherInfo.innerHTML = `
+        <div class="weather-details">
+          <h3>${data.name}</h3>
+          <p>${data.weather[0].description}</p>
+          <p>🌡 ${Math.round(data.main.temp)}°C</p>
+          <p>💨 ${data.wind.speed} m/s wind</p>
+        </div>
+      `;
+    } else {
+      weatherInfo.innerHTML = `<p>City not found.</p>`;
+    }
+  } catch (err) {
+    weatherInfo.innerHTML = `<p>Weather data unavailable.</p>`;
+  }
+}
+
+loadWeather();
+
+// --- 3. Add GSAP Fade-in Animation (optional, for cohesion) ---
+gsap.from(".glass-card", {
+  opacity: 0,
+  y: 30,
+  duration: 0.8,
+  stagger: 0.2,
+  ease: "power2.out"
+});
