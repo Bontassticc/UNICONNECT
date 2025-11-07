@@ -27,7 +27,7 @@ const eventsData = [
     category: "social",
     desc: "Outdoor cinema night with popcorn, beanbags, and fairy lights!",
     date: "2025-11-20",
-    location: "Wits University",
+    location: "University of Pretoria",
     img: "../Images/Movie under the stars.jpg"
   },
   
@@ -44,8 +44,8 @@ const eventsData = [
     category: "academic",
     desc: "A showcase of student projects in animation, design, and 3D art.",
     date: "2025-10-28",
-    location: "Wits University",
-    img: "https://via.placeholder.com/400x250?text=Design+Expo"
+    location: "University of Cape Town",
+    img: "../Images/animation.jpg"
   },
 
   {
@@ -64,7 +64,7 @@ const eventsData = [
     desc: "Welcome new students with a night of music, lights, and laughter.",
     date: "2025-02-10",
     location: "Wits University",
-    img: "https://via.placeholder.com/400x250?text=Freshers+Bash"
+    img: "../Images/Wits freshers 2025.jpg"
   },
 
   {
@@ -72,16 +72,16 @@ const eventsData = [
     category: "social",
     desc: "Inter-residence games night — Uno, 30 Seconds, Jenga, and more!",
     date: "2025-09-28",
-    location: "Wits University",
-    img: "https://via.placeholder.com/400x250?text=Games+Night"
+    location: "Rhodes University",
+    img: "../Images/Games night.jpg"
   },
   {
     name: "Sunset Picnic on the Lawn",
     category: "social",
     desc: "Bring your blanket, snacks, and besties for a chill evening vibe.",
     date: "2025-09-30",
-    location: "Wits University",
-    img: "https://via.placeholder.com/400x250?text=Picnic+Evening"
+    location: "University of Pretoria",
+    img: "../Images/Picnic.jpg"
   },
   
   {
@@ -90,7 +90,7 @@ const eventsData = [
     desc: "Dress to impress or scare — prizes for the best costume!",
     date: "2025-10-31",
     location: "Wits University",
-    img: "https://via.placeholder.com/400x250?text=Halloween+Bash"
+    img: "../Images/Halloween.jpg"
   },
 
 
@@ -101,13 +101,15 @@ const eventsData = [
     category: "creative",
     desc: "A gallery of visual art, photography, and digital design.",
     date: "2025-10-21",
-    img: "https://via.placeholder.com/400x250?text=Art+Exhibition"
+    location: "Wits University",
+    img: "../Images/exibition.jpg"
   },
   {
     name: "Film & Chill: African Cinema Night",
     category: "creative",
     desc: "Showcasing African films and student short stories.",
     date: "2025-10-22",
+    location: "Wits University",
     img: "https://via.placeholder.com/400x250?text=African+Cinema"
   },
 
@@ -116,6 +118,7 @@ const eventsData = [
     category: "creative",
     desc: "Catch the drama society’s latest performance live at the theatre.",
     date: "2025-09-29",
+    location: "Universit of Zululand",
     img: "https://via.placeholder.com/400x250?text=Drama+Night"
   },
 
@@ -139,7 +142,7 @@ const eventsData = [
     desc: "Run, jog, or walk — all proceeds go to student charities.",
     date: "2025-10-09",
     location: "Wits University",
-    img: "https://via.placeholder.com/400x250?text=Fun+Run"
+    img: "../Images/Run.jpg"
   },
   {
     name: "Esports Tournament",

@@ -1168,3 +1168,166 @@ footer {
   margin: 1rem auto;
   opacity: 0.8;
 }
+
+/* ===== HERO SECTION ===== */
+.about-hero {
+  height: 100vh;
+  background: url('../Images/Universities.jpg') center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #4315ea;
+}
+
+.about-hero .hero-content h1 {
+  font-size: 4rem;
+  margin-bottom: 3rem;
+}
+
+.about-hero .hero-content p {
+  font-size: 1.2rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* ===== MISSION & VISION ===== */
+.about-mission {
+  padding: 4rem 1rem;
+  text-align: center;
+}
+
+.about-mission h2 {
+  font-family: var(--font-secondary);
+  color: var(--color-primary);
+  margin-bottom: 1rem;
+}
+
+.about-mission p {
+  max-width: 700px;
+  margin: 0.5rem auto 2rem auto;
+  color: var(--color-text);
+}
+
+/* ===== TEAM CARDS ===== */
+.about-team {
+  padding: 4rem 1rem;
+  text-align: center;
+}
+
+.team-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.team-card {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  width: 200px;
+  padding: 1rem;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+  transition: transform 0.3s;
+}
+
+.team-card:hover {
+  transform: translateY(-5px);
+}
+
+.team-card img {
+  width: 100%;
+  border-radius: 50%;
+  margin-bottom: 0.8rem;
+}
+
+.team-card h3 {
+  margin: 0.3rem 0;
+  font-family: var(--font-secondary);
+  color: var(--color-text);
+}
+
+.team-card p {
+  font-size: 0.85rem;
+  color: var(--color-light-text);
+}
+
+/* ===== HOW IT WORKS ===== */
+.about-steps {
+  padding: 4rem 1rem;
+  text-align: center;
+}
+
+.steps-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.step {
+  background: rgba(255,255,255,0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  padding: 2rem;
+  width: 250px;
+  transition: transform 0.3s;
+}
+
+.step:hover {
+  transform: translateY(-5px);
+}
+
+.step h3 {
+  margin-bottom: 0.5rem;
+  color: var(--color-primary);
+}
+
+/* ===== STATS ===== */
+.about-stats {
+  padding: 4rem 1rem;
+  text-align: center;
+}
+
+.stats-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.stat-card {
+  background: rgba(255,255,255,0.1);
+  backdrop-filter: blur(10px);
+  padding: 2rem;
+  width: 200px;
+  border-radius: 15px;
+  transition: transform 0.3s;
+}
+
+.stat-card:hover {
+  transform: translateY(-5px);
+}
+
+.stat-number {
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--color-primary);
+}
+
+/* ===== CTA ===== */
+.about-cta {
+  padding: 4rem 1rem;
+  text-align: center;
+  font-size: 1.2rem;
+}
+
+.about-cta a {
+  color: var(--color-primary);
+  font-weight: bold;
+  text-decoration: underline;
+}
+
