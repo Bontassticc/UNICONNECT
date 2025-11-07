@@ -24,24 +24,16 @@
     </div>
   </div>
 </header>
+<!-- Calendar / Noticeboard Section -->
+<section class="noticeboard">
+  <h2>📌 University Notice Board</h2>
 
   <!-- Calendar Section -->
-  <section class="calendar-section">
-    <h2>Notice Board 📅</h2>
-
-    
-
-    <!-- Month Navigation -->
-    <div class="calendar-nav">
-      <button id="prevMonth">&lt; Prev</button>
-      <h3 id="monthYear"></h3>
-      <button id="nextMonth">Next &gt;</button>
-    </div>
-
-    <!-- Calendar Grid -->
-    <div class="calendar" id="calendar">
-      <!-- Days will be populated dynamically -->
-    </div>
+  <div class="calendar-container">
+ <!-- Month Navigation --> <div class="calendar-nav"> 
+    <button id="prevMonth">&lt; Prev</button> 
+    <h3 id="monthYear"></h3> <button id="nextMonth">Next &gt;</button> 
+</div> <!-- Calendar Grid --> <div class="calendar" id="calendar"> <!-- Days will be populated dynamically --> </div>
 
     <!-- Legend -->
     <div class="calendar-legend">
@@ -49,16 +41,29 @@
       <span class="legend-item" style="background-color:#c1785c">🎓 Academic</span>
       <span class="legend-item" style="background-color:#557c55">⚽ Sports</span>
     </div>
-  </section>
+  </div>
 
-  <section class="quick-announcements">
-  <h3>📢 Announcements</h3>
-  <ul>
-    <li>⚠ Mid-sem break begins on the 24th.</li>
-    <li>🧠 Study night at the library this Friday!</li>
-    <li>🎬 Movie Night hosted by Media Club on Saturday.</li>
-  </ul>
+  <!-- Quick Announcements Section -->
+  <div class="quick-announcements">
+    <h3>📢 Quick Announcements</h3>
+    <div class="announcement-cards">
+      <div class="announcement-card">
+        <p>⚠ Mid-sem break begins on the 24th.</p>
+        <span class="announcement-date">🗓️ 24 November 2025</span>
+      </div>
+      <div class="announcement-card">
+        <p>🧠 Study night at the library this Friday!</p>
+        <span class="announcement-date">🗓️ 8 November 2025</span>
+      </div>
+      <div class="announcement-card">
+        <p>🎬 Movie Night hosted by Media Club on Saturday.</p>
+        <span class="announcement-date">🗓️ 9 November 2025</span>
+      </div>
+      <!-- Additional cards can be added here -->
+    </div>
+  </div>
 </section>
+
 
   <footer>
     <p>© 2025 UniConnect Events</p>

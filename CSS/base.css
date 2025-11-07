@@ -140,7 +140,7 @@ body {
 .hero {
   height: 100vh; /* full viewport height */
   background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
-              url('/Images/Universities.jpg') center/cover no-repeat; /* Replace with your hero image */
+              url('../Images/Universities.jpg') center/cover no-repeat; /* Replace with your hero image */
   color: white;
   display: flex;
   justify-content: center;
@@ -511,6 +511,45 @@ footer {
   border-radius: 0.5rem;
   color: #fff;
   font-size: 0.85rem;
+}
+
+.quick-announcements {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.announcement-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.announcement-card {
+  flex: 0 0 280px;
+  background: rgba(255,255,255,0.15);
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  padding: 1rem;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.announcement-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+.announcement-card p {
+  font-family: var(--font-primary);
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+}
+
+.announcement-date {
+  font-size: 0.8rem;
+  color: var(--color-accent);
+  font-weight: 600;
 }
 
 /* Responsive */
