@@ -3,7 +3,7 @@
    ============================== */
 
 /* Import Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins:wght@400;500;600&display=swap');
+
 
 :root {
   --color-bg: #fdf7ff;           /* Very soft lilac background – airy and modern */
@@ -14,7 +14,7 @@
   --color-light-text: #5f5f5f;   /* Softer text for subtitles, placeholders */
   
   --font-primary: 'Poppins', sans-serif;       /* Clean, modern font for UI text */
-  --font-secondary: 'Playfair Display', serif; /* Elegant touch for headings */
+  --font-secondary: serif; /* Elegant touch for headings */
 }
 
 /* ===== RESET ===== */
@@ -1152,4 +1152,19 @@ footer {
   margin-bottom: 5px;
   text-transform: capitalize;
   color: #fff;
+}
+
+.motion-icon {
+  position: fixed;
+  top: 20%;
+  left: 10%;
+  z-index: 1000;
+  pointer-events: none;
+  opacity: 0.7;
+}
+
+#hero-line {
+  display: block;
+  margin: 1rem auto;
+  opacity: 0.8;
 }

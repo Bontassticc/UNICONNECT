@@ -364,6 +364,7 @@ fetchExternalEvents();
 
 
 
+
 // ===== CONDITIONAL EXECUTION =====
 if (document.getElementById("featured-events")) {
   displayFeaturedEvents();

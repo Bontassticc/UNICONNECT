@@ -5,6 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="./CSS/base.css">
+    <!-- GSAP and ScrollTrigger -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/MotionPathPlugin.min.js"></script>
+
 </head>
 <body>
    <header id="navbar" class="navbar">
@@ -34,6 +39,17 @@
        <a href="#attend">Attend</a> </h1>
       <p>Your one-stop hub for all university events, academic, social & creative!</p>
 
+       <!-- Animated connecting line -->
+    <svg id="hero-line" width="400" height="100" viewBox="0 0 400 100">
+      <path
+        id="connectPath"
+        d="M20 80 C120 20, 280 20, 380 80"
+        stroke="#f2a65a"
+        stroke-width="3"
+        fill="none"
+        stroke-linecap="round"
+      />
+    </svg>
     
     </div>
 </section>
