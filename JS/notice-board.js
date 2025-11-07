@@ -1,107 +1,99 @@
-// ===== NOTICE BOARD PAGE JS =====
+// ===== GLOBAL EVENTS DATA =====
+const eventsData = [
+  { date: "2025-11-10", title: "Study Night", location: "Wits University" },
+  { date: "2025-11-15", title: "Campus Festival", location: "UCT" },
+  { date: "2025-11-25", title: "Midterm Break Starts", location: "UP" },
+];
 
-// --- 1. Dynamic Calendar Setup ---
+// ===== CALENDAR LOGIC =====
 const calendar = document.getElementById("calendar");
 const monthYear = document.getElementById("monthYear");
 const prevMonthBtn = document.getElementById("prevMonth");
 const nextMonthBtn = document.getElementById("nextMonth");
-
 let currentDate = new Date();
-
-const eventsData = [
-  { date: "2025-11-10", title: "Study Night" },
-  { date: "2025-11-15", title: "Campus Festival" },
-  { date: "2025-11-25", title: "Midterm Break Starts" },
-];
 
 function renderCalendar(date) {
   calendar.innerHTML = "";
-
   const year = date.getFullYear();
   const month = date.getMonth();
-
   const firstDay = new Date(year, month, 1);
   const lastDay = new Date(year, month + 1, 0);
   const startDay = firstDay.getDay();
-
   const monthNames = [
-    "January", "February", "March", "April", "May", "June",
-    "July", "August", "September", "October", "November", "December"
+    "January","February","March","April","May","June",
+    "July","August","September","October","November","December"
   ];
   monthYear.textContent = `${monthNames[month]} ${year}`;
 
-  // Fill empty spaces before the first day
-  for (let i = 0; i < startDay; i++) {
-    const empty = document.createElement("div");
-    calendar.appendChild(empty);
-  }
+  for(let i = 0; i < startDay; i++) calendar.appendChild(document.createElement("div"));
 
-  // Fill days
-  for (let i = 1; i <= lastDay.getDate(); i++) {
+  for(let i = 1; i <= lastDay.getDate(); i++){
     const day = document.createElement("div");
     day.textContent = i;
-
-    const fullDate = `${year}-${String(month + 1).padStart(2, "0")}-${String(i).padStart(2, "0")}`;
-    const event = eventsData.find(e => e.date === fullDate);
-
-    if (event) {
+    const fullDate = `${year}-${String(month+1).padStart(2,"0")}-${String(i).padStart(2,"0")}`;
+    const event = eventsData.find(e=>e.date===fullDate);
+    if(event){
       day.classList.add("has-event");
       day.title = event.title;
       day.innerHTML = `<strong>${i}</strong><br><small>${event.title}</small>`;
     }
-
     calendar.appendChild(day);
   }
 }
 
-prevMonthBtn.addEventListener("click", () => {
-  currentDate.setMonth(currentDate.getMonth() - 1);
-  renderCalendar(currentDate);
-});
-
-nextMonthBtn.addEventListener("click", () => {
-  currentDate.setMonth(currentDate.getMonth() + 1);
-  renderCalendar(currentDate);
-});
-
+prevMonthBtn.addEventListener("click",()=>{currentDate.setMonth(currentDate.getMonth()-1); renderCalendar(currentDate);});
+nextMonthBtn.addEventListener("click",()=>{currentDate.setMonth(currentDate.getMonth()+1); renderCalendar(currentDate);});
 renderCalendar(currentDate);
 
-// --- 2. Weather Widget Setup ---
-const weatherInfo = document.getElementById("weather-info");
-const city = "Johannesburg"; // change to your campus city
-const apiKey = "7a0e96b40e23a80fd80c22b124e285f1"; // <-- add your API key here
+// ===== WEATHER LOGIC =====
+const weatherDiv = document.getElementById("weather");
+const cityInput = document.getElementById("cityInput");
+const searchBtn = document.getElementById("weatherSearchBtn");
+const apiKey = "YOUR_API_KEY_HERE"; // <-- replace with your key
 
-async function loadWeather() {
-  try {
-    const res = await fetch(
-      `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`
-    );
+async function fetchWeather(city){
+  weatherDiv.innerHTML = "<p>Loading weather...</p>";
+  try{
+    const res = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`);
     const data = await res.json();
-
-    if (data.cod === 200) {
-      weatherInfo.innerHTML = `
-        <div class="weather-details">
-          <h3>${data.name}</h3>
-          <p>${data.weather[0].description}</p>
-          <p>🌡 ${Math.round(data.main.temp)}°C</p>
-          <p>💨 ${data.wind.speed} m/s wind</p>
-        </div>
-      `;
-    } else {
-      weatherInfo.innerHTML = `<p>City not found.</p>`;
-    }
-  } catch (err) {
-    weatherInfo.innerHTML = `<p>Weather data unavailable.</p>`;
-  }
+    if(data.cod!==200) { weatherDiv.innerHTML="<p>City not found</p>"; return;}
+    const temp = Math.round(data.main.temp);
+    const desc = data.weather[0].description;
+    const icon = `http://openweathermap.org/img/wn/${data.weather[0].icon}.png`;
+    weatherDiv.innerHTML = `
+      <img src="${icon}" alt="${desc}">
+      <p>${city}</p>
+      <p>${temp}°C | ${desc}</p>
+    `;
+  }catch(err){ weatherDiv.innerHTML="<p>Unable to load weather</p>"; }
 }
 
-loadWeather();
+// Default city
+fetchWeather("Johannesburg");
+searchBtn.addEventListener("click",()=>{ const city = cityInput.value.trim(); if(city) fetchWeather(city); });
+cityInput.addEventListener("keypress",(e)=>{ if(e.key==="Enter"){ const city = cityInput.value.trim(); if(city) fetchWeather(city); }});
 
-// --- 3. Add GSAP Fade-in Animation (optional, for cohesion) ---
-gsap.from(".glass-card", {
-  opacity: 0,
-  y: 30,
-  duration: 0.8,
-  stagger: 0.2,
-  ease: "power2.out"
+// ===== MAP LOGIC (Leaflet.js) =====
+const map = L.map('map').setView([-26.2041,28.0473], 6); // Default: South Africa
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{
+  maxZoom:19,
+}).addTo(map);
+
+// Map markers from eventsData
+const campusCoords = { "Wits University":[-26.1882,28.0300], "UCT":[-33.9570,18.4609], "UP":[-25.7540,28.2314] };
+eventsData.forEach(event=>{
+  const coords = campusCoords[event.location];
+  if(coords) L.marker(coords).addTo(map).bindPopup(`<b>${event.title}</b><br>${event.date}`);
 });
+
+eventsData.forEach(event => {
+  const coords = getCoords(event.location); // a function mapping campus names to lat/lng
+  if (coords) {
+    L.marker(coords).addTo(map)
+      .bindPopup(`<b>${event.title}</b><br>${event.date}`);
+  }
+});
+
+
+// ===== GSAP Fade-in for Cohesion =====
+gsap.from(".glass-card", {opacity:0, y:30, duration:0.8, stagger:0.2, ease:"power2.out"});
