@@ -48,15 +48,6 @@ const eventsData = [
     img: "../Images/animation.jpg"
   },
 
-  {
-    name: "Research Poster Showcase",
-    category: "academic",
-    desc: "Discover groundbreaking student research across faculties.",
-    date: "2025-09-27",
-    location: "Wits University",
-    img: "https://via.placeholder.com/400x250?text=Research+Showcase"
-  },
-
   // 🎶 Social & Campus Life
   {
     name: "Freshers Bash",
@@ -110,7 +101,7 @@ const eventsData = [
     desc: "Showcasing African films and student short stories.",
     date: "2025-10-22",
     location: "Wits University",
-    img: "https://via.placeholder.com/400x250?text=African+Cinema"
+    img: "../Images/Film and Chill.jpg"
   },
 
   {
@@ -119,7 +110,7 @@ const eventsData = [
     desc: "Catch the drama society’s latest performance live at the theatre.",
     date: "2025-09-29",
     location: "Universit of Zululand",
-    img: "https://via.placeholder.com/400x250?text=Drama+Night"
+    img: "../Images/Theater.jpg"
   },
 
   // 💕 Wellness & Personal Growth
@@ -131,7 +122,7 @@ const eventsData = [
     desc: "Workshops, self-care talks, and free counselling sign-ups.",
     date: "2025-10-02",
     location: "Wits University",
-    img: "https://via.placeholder.com/400x250?text=Mental+Health+Week"
+    img: "../Images/MentalHealth.jpg"
   },
   
 
@@ -150,7 +141,7 @@ const eventsData = [
     desc: "Compete in FIFA, Tekken, and more for cash prizes.",
     date: "2025-10-15",
     location: "Wits University",
-    img: "https://via.placeholder.com/400x250?text=Esports"
+    img: "../Images/exibition.jpg"
   },
 
 ];
