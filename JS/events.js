@@ -293,10 +293,20 @@ function displayFeaturedEvents() {
   const featuredSection = document.getElementById("featured-events");
   if (!featuredSection) return;
 
+  // create wrapper if not exists
+  let wrapper = featuredSection.querySelector(".events-wrapper");
+  if (!wrapper) {
+    wrapper = document.createElement("div");
+    wrapper.className = "events-wrapper";
+    featuredSection.appendChild(wrapper);
+  } else {
+    wrapper.innerHTML = ""; // clear previous cards if any
+  }
+
   const today = new Date();
   const featuredEvents = eventsData
     .filter(event => event.featured || new Date(event.date) >= today)
-    .slice(0, 4);
+    .slice(0, 6);
 
   featuredEvents.forEach(event => {
     const card = document.createElement("div");
@@ -311,10 +321,12 @@ function displayFeaturedEvents() {
         <p class="event-date">📅 ${new Date(event.date).toDateString()}</p>
       </div>
     `;
+
     card.addEventListener("click", () => {
       window.location.href = "Events/events.html";
     });
-    featuredSection.appendChild(card);
+
+    wrapper.appendChild(card);
   });
 }
 
@@ -401,36 +413,6 @@ document.querySelectorAll('.motto-word').forEach(word => {
       const filtered = eventsData.filter(event => event.category === category);
       displayEvents(filtered);
     }
-  });
-});
-
-// ===== DISCOVER · CONNECT · ATTEND INTERACTIVITY =====
-document.querySelectorAll('.motto-word').forEach(word => {
-  word.addEventListener('click', () => {
-    const targetId = word.dataset.target;
-    const contentSections = document.querySelectorAll('.motto-content');
-
-    // Hide all
-    contentSections.forEach(section => section.classList.remove('active'));
-
-    // Show clicked section
-    const targetSection = document.getElementById(targetId);
-    if (targetSection) targetSection.classList.add('active');
-  });
-});
-
-// ===== DISCOVER · CONNECT · ATTEND INTERACTIVITY =====
-document.querySelectorAll('.motto-word').forEach(word => {
-  word.addEventListener('click', () => {
-    const targetId = word.dataset.target;
-    const contentSections = document.querySelectorAll('.motto-content');
-
-    // Hide all
-    contentSections.forEach(section => section.classList.remove('active'));
-
-    // Show clicked section
-    const targetSection = document.getElementById(targetId);
-    if (targetSection) targetSection.classList.add('active');
   });
 });
 

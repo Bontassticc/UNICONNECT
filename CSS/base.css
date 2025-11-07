@@ -159,6 +159,21 @@ body {
   font-weight: 700;
 }
 
+.hero h1 a {
+  color: inherit;       /* Take the color of the parent h1 */
+  text-decoration: none; /* Remove underline */
+}
+
+.hero h1 a:hover {
+  color: var(--color-accent); /* Optional: change color on hover */
+}
+
+
+.hero-text {
+ color:#ddd
+
+}
+
 .hero p {
   font-size: 1.2rem;
   margin-bottom: 2rem;
@@ -702,19 +717,42 @@ footer {
 
 /* ===== RESPONSIVE ===== */
 @media (max-width: 768px) {
-  .spotlight-card {
-    flex-direction: column;
-    align-items: center;
-  }
+  .spotlight {
+  padding: 3rem 1rem;
+  background: rgba(255, 255, 255, 0.05); /* subtle background */
+  backdrop-filter: blur(5px);
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;           /* horizontal scroll */
+  scroll-behavior: smooth;
+  justify-content: center;    /* center cards if fewer than screen width */
+}
 
-  .spotlight-card img {
-    width: 100%;
-    height: 200px;
-  }
+/* Featured cards directly inside section */
+.spotlight .event-card {
+  flex: 0 0 280px;           /* fixed width for horizontal scroll */
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  padding: 1rem;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
 
-  .spotlight-info {
-    text-align: center;
-  }
+.spotlight .event-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+/* Optional: scroll snapping */
+.spotlight {
+  scroll-snap-type: x mandatory;
+}
+
+.spotlight .event-card {
+  scroll-snap-align: start;
+}
 
   #featured-events .event-card {
     width: 45%;
@@ -774,48 +812,45 @@ footer {
 }
 
 .testimonials {
-  text-align: center;
-  padding: 50px 20px;
-}
-
-.testimonials h2 {
-  margin-bottom: 30px;
+  padding: 4rem 2rem;
+  background-color: rgba(0,0,0,0.05); /* subtle separation from other sections */
 }
 
 .testimonials-grid {
   display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
   gap: 20px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
 }
 
+/* Optional: glassy testimonial cards */
 .testimonial-card {
-  background-color: #fff;
-  border-radius: 12px;
-  padding: 20px;
-  max-width: 250px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  flex: 0 0 280px;   /* fixed width for horizontal scroll */
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  padding: 1.5rem;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
   text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-5px);
 }
 
 .testimonial-card img {
-  width: 60px;
-  height: 60px;
+  width: 80px;
+  height: 80px;
   border-radius: 50%;
-  margin-bottom: 10px;
   object-fit: cover;
+  margin-bottom: 1rem;
 }
 
 .testimonial-card p {
-  font-size: 0.9rem;
-  margin-bottom: 8px;
+  font-style: italic;
 }
 
-.testimonial-card span {
-  font-weight: bold;
-  font-size: 0.8rem;
-  color: #555;
-}
 
 .quick-announcements {
   margin-top: 2rem;
@@ -837,102 +872,56 @@ footer {
   font-weight: 500;
 }
 
-/* ===== MOTTO CONTENT SECTIONS ===== */
-.motto-content {
+#featured-events .events-wrapper {
+  display: flex;
+  gap: 20px;
+  justify-content: center; /* center the cards */
+
+}
+
+
+#featured-events {
+  overflow-x: auto;
+  padding: 2rem 1rem;
+  scroll-behavior: smooth;
+}
+
+/* Optional: hide default scrollbar */
+#featured-events::-webkit-scrollbar {
   display: none;
-  max-width: 700px;
-  margin: 2rem auto 0;
-  background: #f8f8f8;
-  padding: 1.5rem 2rem;
-  border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-  transition: all 0.4s ease;
 }
 
-.motto-content.active {
-  display: block;
-  animation: fadeInUp 0.6s ease forwards;
-}
 
-.motto-content h3 {
-  color: var(--color-primary);
-  margin-bottom: 0.5rem;
-}
 
-.motto-content p {
-  font-size: 1rem;
-  color: #3006e8;
-  margin-bottom: 1rem;
-}
-
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* ===== MOTTO SECTION ===== */
-.motto-section {
-  text-align: center;
-  margin: 4rem 0 2rem;
-  font-family: 'Poppins', sans-serif;
-}
-
-.motto-section h2 {
-  font-size: 2.5rem;
-  font-weight: 700;
-  letter-spacing: 1px;
-}
-
-.motto-word {
-  color: var(--color-secondary);
+#featured-events .event-card {
+  flex: 0 0 280px;
+  background: rgba(255,255,255,0.15);
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
   cursor: pointer;
-  transition: color 0.3s ease, transform 0.3s ease;
+  transition: transform 0.3s, box-shadow 0.3s;
 }
 
-.motto-word:hover {
-  color: var(--color-primary);
-  transform: scale(1.1);
+
+#featured-events .event-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
 }
 
-.motto-section p {
-  font-size: 1rem;
-  color: #3612d4;
-  margin-top: 0.5rem;
+#featured-events .event-image img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
 }
 
-.motto-section {
-  text-align: center;
-  padding: 4rem 2rem;
-  background-color: #fafafa; /* Light neutral background for contrast */
-  border-top: 2px solid #e5e5e5;
-  border-bottom: 2px solid #e5e5e5;
+#featured-events .event-info {
+  padding: 1rem;
 }
 
-.motto-section h2 {
-  font-size: 2rem;
-  letter-spacing: 2px;
-  color: #1010e6;
-  margin-bottom: 0.5rem;
-}
-
-.motto-section p {
-  color: #0e3de7;
-  font-size: 1.1rem;
-  margin-bottom: 1.5rem;
-}
-
-.motto-word {
-  cursor: pointer;
-  transition: color 0.3s ease;
-  font-weight: 600;
-}
-
-.motto-word:hover {
-  color: var(--color-primary);
+#featured-events .event-info h3 {
+  font-size: 1.2rem;
+  margin: 0.5rem 0;
 }
