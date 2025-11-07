@@ -341,13 +341,16 @@ body {
 
 
 /* ===== FORM SECTION ===== */
+/* ===== FORM SECTION ===== */
 .form-section {
   max-width: 600px;
   margin: 3rem auto;
   padding: 2rem;
-  background: #fff;
+  background: rgba(255, 255, 255, 0.85); /* slight glassy effect */
+  backdrop-filter: blur(10px);
   border-radius: 16px;
-  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  font-family: var(--font-primary);
 }
 
 .form-section h2 {
@@ -355,10 +358,6 @@ body {
   color: var(--color-primary);
   font-family: var(--font-secondary);
   margin-bottom: 1.5rem;
-}
-
-.form-group {
-  margin-bottom: 1rem;
 }
 
 label {
@@ -375,6 +374,7 @@ textarea {
   border: 1px solid #ddd;
   border-radius: 8px;
   font-family: var(--font-primary);
+  transition: border-color 0.3s, box-shadow 0.3s;
 }
 
 input:focus,
@@ -382,7 +382,59 @@ select:focus,
 textarea:focus {
   outline: none;
   border-color: var(--color-primary);
+  box-shadow: 0 0 5px rgba(0,0,0,0.1);
 }
+
+/* ===== ERROR MESSAGE ===== */
+small.error-message {
+  color: red;
+  font-size: 0.85rem;
+  margin-top: 3px;
+  display: block;
+}
+
+/* ===== REAL-TIME VALIDATION HIGHLIGHTS ===== */
+input.valid,
+select.valid,
+textarea.valid {
+  border-color: green;
+  box-shadow: 0 0 5px rgba(0, 128, 0, 0.3);
+}
+
+input.invalid,
+select.invalid,
+textarea.invalid {
+  border-color: red;
+  box-shadow: 0 0 5px rgba(255, 0, 0, 0.3);
+}
+
+/* ===== SUBMIT BUTTON ===== */
+button[type="submit"] {
+  width: 100%;
+  padding: 0.8rem;
+  background-color: var(--color-primary);
+  color: #e82309;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 1rem;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+button[type="submit"]:hover {
+  background-color: darken(var(--color-primary), 10%);
+  transform: translateY(-2px);
+}
+
+/* ===== SUCCESS MESSAGE ===== */
+#formSuccess {
+  text-align: center;
+  color: green;
+  margin-top: 1rem;
+  font-weight: 600;
+}
+
 
 /* ===== ABOUT / CONTACT ===== */
 .about,
