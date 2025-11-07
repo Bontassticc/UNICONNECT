@@ -7,49 +7,77 @@
     <link rel="stylesheet" href="../CSS/base.css">
 </head>
 <body>
-     <header>
-        <nav class="navbar">
-            <div class="logo"> UniConnect </div>
-            <ul class="nav-links">
-                <li><a href="../index.html"> Home</a></li>
-                <li><a href="../Events/events.html"> Events</a></li>
-                <li><a href="../Events/add-events.html" class="active"> Add Event</a></li>
-                <li><a href="./NoticeBoard/notice-board.html">NoticeBoard</a></li>
-                <li><a href="../about.html"> About</a></li>
-                
-            </ul>
-        </nav>
-    </header>
+      <header id="navbar" class="navbar">
+  <div class="nav-container">
+    <h1 class="logo">UniConnect</h1>
+    <nav id="nav-menu" class="nav-menu">
+      <a href="../index.html" class="nav-link">Home</a>
+      <a href="../Events/events.html" class="nav-link">Events</a>
+      <a href="../Events/add-events.html" class="nav-link">Add Event</a>
+      <a href="../NoticeBoard/notice-board.html" class="nav-link">NoticeBoard</a>
+      <a href="../about.html" class="nav-link">About</a>
+    </nav>
+    <div class="nav-toggle" id="nav-toggle">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+</header>
     
     <section class="form-section">
-        <h2>Host Your Own Event</h2>
-        <form id="addEventForm">
-            <label for="eventName"> Event Name </label>
-            <input type="text" id="eventName" required>
+  <h2>Host Your Own Event</h2>
+  <p>Fill in the details below to add your event. Make it fun, clear, and inviting!</p>
 
-            <label for="univeristy"> University </label>
-            <input type="text" id=" univeristy" required>
+  <form id="addEventForm" novalidate>
+    
+    <label for="eventName">Event Name</label>
+    <input type="text" id="eventName" placeholder="E.g., Campus Music Night" required>
+    <small class="error-message"></small>
 
-            <label for="eventDate"> Date </label>
-            <input type="date" id="eventDate" required>
+    <label for="eventDate">Date</label>
+    <input type="date" id="eventDate" required>
+    <small class="error-message"></small>
 
-            <label for="eventLocation"> Location </label>
-            <input type="text" id="eventLocation" required>
+    <label for="eventLocation">Location</label>
+    <select id="eventLocation" required>
+      <option value="">Select University</option>
+      <option value="Wits">Wits University</option>
+      <option value="UP">University of Pretoria</option>
+      <option value="UCT">University of Cape Town</option>
+      <option value="Stellenbosch">Stellenbosch University</option>
+      <option value="UFS">University of the Free State</option>
+    </select>
+    <small class="error-message"></small>
 
-            <label for="eventCatergory"> Catergory </label>
-            <select id="eventCatergory" required>
-                <option value="academic">Academic </option>
-                <option value="social">Social</option>
-                <option value="sports">Sports</option>
-            </select>
+    <label for="eventCategory">Category</label>
+    <select id="eventCategory" required>
+      <option value="">Select Category</option>
+      <option value="academic">Academic</option>
+      <option value="social">Social</option>
+      <option value="sports">Sports</option>
+      <option value="creative">Creative</option>
+      <option value="wellness">Wellness</option>
+    </select>
+    <small class="error-message"></small>
 
-            <label for="eventDesc">Descriptions</label>
-            <textarea id="eventDesc" required></textarea>
+    <label for="eventDesc">Description</label>
+    <textarea id="eventDesc" rows="4" placeholder="Add a short description..." required></textarea>
+    <small class="error-message"></small>
 
-            <button type="submit" class="btn">Submit</button>
+    <label for="eventImg">Event Image (optional)</label>
+    <input type="url" id="eventImg" placeholder="Paste an image URL">
 
-            
-        </form>
-    </section>
+    <button type="submit" class="btn">Submit Event</button>
+  </form>
+
+  <p id="formSuccess" style="display:none; color: var(--color-secondary); margin-top: 1rem;">
+    🎉 Your event has been submitted!
+  </p>
+</section>
+
+<script src="../JS/events.js"></script> <!-- your main events array & functions -->
+<script src="../JS/form.js"></script>
+<script src="../JS/main.js"></script> 
 </body>
 </html>

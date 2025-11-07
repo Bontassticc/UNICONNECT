@@ -29,14 +29,7 @@ const eventsData = [
     location: "Wits University",
     img: "assets/images/sports-fest.jpg"
   },
-  {
-    name: "Creative Writing Workshop",
-    category: "academic",
-    desc: "A chill writing session for poets and storytellers alike.",
-    date: "2025-11-10",
-    location: "Wits University",
-    img: "assets/images/writing-workshop.jpg"
-  },
+  
   {
     name: "Movie Under the Stars",
     category: "social",
@@ -45,31 +38,7 @@ const eventsData = [
     location: "Wits University",
     img: "../Images/Movie under the stars.jpg"
   },
-  {
-    name: "Wellness Yoga Morning",
-    category: "social",
-    desc: "Free sunrise yoga for students! Bring a mat and good vibes.",
-    date: "2025-11-09",
-    location: "Wits University",
-    img: "../Images/yoga.jpg"
-  },
-
-  {
-    name: "Career Fair 2025",
-    category: "academic",
-    desc: "Meet recruiters from top companies and learn how to stand out!",
-    date: "2025-11-15",
-    location: "Wits University",
-    img: "../Images/Career Fair.jpg"
-  },
-  {
-    name: "CV & LinkedIn Workshop",
-    category: "academic",
-    desc: "Polish your professional profile and get tips from career advisors.",
-    date: "2025-10-20",
-    location: "Wits University",
-    img: "https://via.placeholder.com/400x250?text=CV+Workshop"
-  },
+  
   {
     name: "Coding Hackathon: Build for Change",
     category: "academic",
@@ -94,22 +63,7 @@ const eventsData = [
     location: "Wits University",
     img: "https://via.placeholder.com/400x250?text=Women+in+Tech"
   },
-  {
-    name: "Start-Up Pitch Night",
-    category: "academic",
-    desc: "Student entrepreneurs pitch ideas to local investors and mentors.",
-    date: "2025-10-30",
-    location: "Wits University",
-    img: "https://via.placeholder.com/400x250?text=Startup+Pitch"
-  },
-  {
-    name: "Study Jam & Coffee Crawl",
-    category: "academic",
-    desc: "Grab your laptop, get free coffee refills, and study with peers.",
-    date: "2025-10-10",
-    location: "Wits University",
-    img: "https://via.placeholder.com/400x250?text=Study+Jam"
-  },
+
   {
     name: "Exam Survival Bootcamp",
     category: "academic",
@@ -136,14 +90,7 @@ const eventsData = [
   },
 
   // 🎶 Social & Campus Life
-  {
-    name: "Campus Music Night",
-    category: "social",
-    desc: "Live performances from student bands, DJs, and guest artists.",
-    date: "2025-11-12",
-    location: "Wits University",
-    img: "https://via.placeholder.com/400x250?text=Music+Night"
-  },
+
   {
     name: "Heritage Day Braai",
     category: "social",
@@ -160,14 +107,7 @@ const eventsData = [
     location: "Wits University",
     img: "https://via.placeholder.com/400x250?text=Freshers+Bash"
   },
-  {
-    name: "Movie Under the Stars",
-    category: "social",
-    desc: "Outdoor cinema night with popcorn, beanbags, and fairy lights!",
-    date: "2025-11-20",
-    location: "Wits University",
-    img: "https://via.placeholder.com/400x250?text=Movie+Night"
-  },
+
   {
     name: "Cultural Day Food Fair",
     category: "social",
@@ -208,14 +148,7 @@ const eventsData = [
     location: "Wits University",
     img: "https://via.placeholder.com/400x250?text=Halloween+Bash"
   },
-  {
-    name: "DJ Night at The Quad",
-    category: "social",
-    desc: "Party under the stars with campus DJs spinning your faves.",
-    date: "2025-10-07",
-    location: "Wits University",
-    img: "https://via.placeholder.com/400x250?text=DJ+Night"
-  },
+
   {
     name: "Pride Celebration & Queer Film Night",
     category: "social",
@@ -247,13 +180,7 @@ const eventsData = [
     date: "2025-10-19",
     img: "https://via.placeholder.com/400x250?text=Fashion+Show"
   },
-  {
-    name: "Photography Walk",
-    category: "creative",
-    desc: "Explore campus beauty through your camera lens.",
-    date: "2025-09-25",
-    img: "https://via.placeholder.com/400x250?text=Photo+Walk"
-  },
+  
   {
     name: "Film & Chill: African Cinema Night",
     category: "creative",
@@ -261,13 +188,7 @@ const eventsData = [
     date: "2025-10-22",
     img: "https://via.placeholder.com/400x250?text=African+Cinema"
   },
-  {
-    name: "Dance Workshop: Afrobeat Edition",
-    category: "creative",
-    desc: "Learn the moves and rhythm of Afrobeat with pro instructors!",
-    date: "2025-10-11",
-    img: "https://via.placeholder.com/400x250?text=Afrobeat+Workshop"
-  },
+
   {
     name: "Drama Society Play: ‘The Roommate’",
     category: "creative",
@@ -277,20 +198,8 @@ const eventsData = [
   },
 
   // 💕 Wellness & Personal Growth
-  {
-    name: "Wellness Yoga Morning",
-    category: "wellness",
-    desc: "Start your day right with calm, stretch, and sunlight.",
-    date: "2025-11-09",
-    img: "https://via.placeholder.com/400x250?text=Yoga+Morning"
-  },
-  {
-    name: "Vision Board & Goal Setting Workshop",
-    category: "wellness",
-    desc: "Manifest your dreams with a guided visualization session.",
-    date: "2025-10-12",
-    img: "https://via.placeholder.com/400x250?text=Vision+Board"
-  },
+  
+  
   {
     name: "Mental Health Awareness Week",
     category: "wellness",
@@ -299,14 +208,7 @@ const eventsData = [
     location: "Wits University",
     img: "https://via.placeholder.com/400x250?text=Mental+Health+Week"
   },
-  {
-    name: "Therapy Dogs on Campus",
-    category: "wellness",
-    desc: "Take a break, pet a pup, and ease your stress before exams!",
-    date: "2025-10-06",
-    location: "Wits University",
-    img: "https://via.placeholder.com/400x250?text=Therapy+Dogs"
-  },
+  
   {
     name: "Self-Care Sunday",
     category: "wellness",
@@ -394,7 +296,7 @@ function displayFeaturedEvents() {
   const today = new Date();
   const featuredEvents = eventsData
     .filter(event => event.featured || new Date(event.date) >= today)
-    .slice(0, 3);
+    .slice(0, 4);
 
   featuredEvents.forEach(event => {
     const card = document.createElement("div");
@@ -485,6 +387,54 @@ function filterEvents() {
   displayEvents(filtered);
 }
 
+// ===== DISCOVER · CONNECT · ATTEND INTERACTIVITY =====
+document.querySelectorAll('.motto-word').forEach(word => {
+  word.addEventListener('click', () => {
+    const target = document.querySelector(word.dataset.target);
+    const category = word.dataset.category;
+
+    // Smooth scroll to section
+    if (target) target.scrollIntoView({ behavior: 'smooth' });
+
+    // Filter events by category (if available)
+    if (typeof displayEvents === "function" && Array.isArray(eventsData)) {
+      const filtered = eventsData.filter(event => event.category === category);
+      displayEvents(filtered);
+    }
+  });
+});
+
+// ===== DISCOVER · CONNECT · ATTEND INTERACTIVITY =====
+document.querySelectorAll('.motto-word').forEach(word => {
+  word.addEventListener('click', () => {
+    const targetId = word.dataset.target;
+    const contentSections = document.querySelectorAll('.motto-content');
+
+    // Hide all
+    contentSections.forEach(section => section.classList.remove('active'));
+
+    // Show clicked section
+    const targetSection = document.getElementById(targetId);
+    if (targetSection) targetSection.classList.add('active');
+  });
+});
+
+// ===== DISCOVER · CONNECT · ATTEND INTERACTIVITY =====
+document.querySelectorAll('.motto-word').forEach(word => {
+  word.addEventListener('click', () => {
+    const targetId = word.dataset.target;
+    const contentSections = document.querySelectorAll('.motto-content');
+
+    // Hide all
+    contentSections.forEach(section => section.classList.remove('active'));
+
+    // Show clicked section
+    const targetSection = document.getElementById(targetId);
+    if (targetSection) targetSection.classList.add('active');
+  });
+});
+
+
 // ===== CONDITIONAL EXECUTION =====
 if (document.getElementById("featured-events")) {
   displayFeaturedEvents();
@@ -500,3 +450,4 @@ if (document.getElementById("events-list")) {
     filterCategory.addEventListener("change", filterEvents);
   }
 }
+

@@ -7,23 +7,23 @@
     <link rel="stylesheet" href="../CSS/base.css">
 </head>
 <body>
-    <header>
-    <nav class="navbar">
-      <div class="logo">UniConnect</div>
-      <ul class="nav-links">
-        <li><a href="../index.html">Home</a></li>
-        <li><a href="../Events/events.html">Events</a></li>
-        <li><a href="../Events/add-events.html">Add Event</a></li>
-        <li><a href="../NoticeBoard/notice-board.html" class="active">Notice Board</a></li>
-        <li><a href="../about.html">About</a></li>
-      </ul>
-      <div class="hamburger">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
+     <header id="navbar" class="navbar">
+  <div class="nav-container">
+    <h1 class="logo">UniConnect</h1>
+    <nav id="nav-menu" class="nav-menu">
+      <a href="../index.html" class="nav-link">Home</a>
+      <a href="../Events/events.html" class="nav-link">Events</a>
+      <a href="../Events/add-events.html" class="nav-link">Add Event</a>
+      <a href="../NoticeBoard/notice-board.html" class="nav-link">NoticeBoard</a>
+      <a href="../about.html" class="nav-link">About</a>
     </nav>
-  </header>
+    <div class="nav-toggle" id="nav-toggle">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+</header>
 
   <!-- Calendar Section -->
   <section class="calendar-section">
@@ -65,5 +65,7 @@
   </footer>
 
    <script src="../JS/notice-board.js"></script>
+   <script src="../JS/events.js"></script>
+   <script src="../JS/main.js"></script> 
 </body>
 </html>

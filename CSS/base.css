@@ -7,9 +7,9 @@
 
 :root {
   --color-bg: #fdf7ff;           /* Very soft lilac background – airy and modern */
-  --color-primary: #ff9ecd;      /* Playful pink – youthful, warm energy */
-  --color-accent: #8bc6ec;       /* Soft sky blue – complements the pink beautifully */
-  --color-secondary: #ffd166;    /* Cheerful pastel yellow – great for highlights */
+  --color-primary: #1d3557;      /* Playful pink – youthful, warm energy */
+  --color-accent: #457b9d;       /* Soft sky blue – complements the pink beautifully */
+  --color-secondary: #e9c46a;    /* Cheerful pastel yellow – great for highlights */
   --color-text: #2a2a2a;         /* Deep neutral – perfect contrast for readability */
   --color-light-text: #5f5f5f;   /* Softer text for subtitles, placeholders */
   
@@ -36,63 +36,139 @@ body {
   padding-top: 70px;
 }
 
-/* ===== NAVBAR ===== */
+/* NAVBAR BASE */
 .navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background: var(--color-primary);
-  color: #fff;
-  padding: 1rem 2rem;
   position: fixed;
   top: 0;
   left: 0;
-  right: 0;
+  width: 100%;
+  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.15);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
   z-index: 1000;
+  transition: background 0.3s ease;
 }
 
-.logo a {
-  font-family: var(--font-secondary);
-  font-size: 1.5rem;
-  color: #fff;
-  text-decoration: none;
-}
-
-.nav-links {
+.nav-container {
   display: flex;
-  list-style: none;
-  gap: 1.5rem;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-.nav-links a {
-  color: #fff;
+/* LOGO */
+.logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: rgb(238, 12, 12);
+  letter-spacing: 1px;
+}
+
+/* NAV LINKS */
+.nav-menu {
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-link {
+  color: rgb(251, 11, 11);
   text-decoration: none;
   font-weight: 500;
-  transition: color 0.3s ease;
+  transition: all 0.3s ease;
 }
 
-.nav-links a:hover,
-.nav-links a.active {
-  color: var(--color-accent);
+.nav-link:hover {
+  color: var(--color-secondary);
+  transform: translateY(-2px);
 }
 
-/* ===== HERO SECTION ===== */
+/* HAMBURGER MENU */
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+}
+
+.nav-toggle span {
+  width: 25px;
+  height: 3px;
+  background: white;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+/* MOBILE VIEW */
+@media (max-width: 768px) {
+  .nav-menu {
+    position: absolute;
+    top: 70px;
+    right: 0;
+    background: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1rem 2rem;
+    gap: 1rem;
+    transform: translateY(-100%);
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.4s ease;
+  }
+
+  .nav-menu.active {
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: all;
+  }
+
+  .nav-toggle {
+    display: flex;
+  }
+}
+
+/* SCROLL EFFECT — darken nav when scrolling */
+.scrolled {
+  background: rgba(20, 20, 20, 0.5);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+
 .hero {
+  height: 100vh; /* full viewport height */
+  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+              url('/Images/Universities.jpg') center/cover no-repeat; /* Replace with your hero image */
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   text-align: center;
-  padding: 4rem 1rem;
-  background: var(--color-accent);
-  color: #fff;
+  padding: 2rem;
+}
+
+.hero-content {
+  max-width: 700px;
 }
 
 .hero h1 {
-  font-family: var(--font-secondary);
-  font-size: 2.5rem;
+  font-size: 3rem;
   margin-bottom: 1rem;
+  font-weight: 700;
 }
 
 .hero p {
-  font-size: 1.1rem;
-  margin-bottom: 1.5rem;
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  color: #f2f2f2;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
 }
 
 .btn {
@@ -109,6 +185,69 @@ body {
 .btn:hover {
   background: var(--color-primary);
 }
+
+.section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 6rem 10%;
+  gap: 3rem;
+}
+
+.section:nth-child(even) {
+  flex-direction: row-reverse;
+}
+
+.section img {
+  width: 45%;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+  object-fit: cover;
+}
+
+.section-content {
+  flex: 1;
+}
+
+.section-content h2 {
+  font-size: 2.2rem;
+  color: var(--color-primary);
+  margin-bottom: 1rem;
+}
+
+.section-content p {
+  line-height: 1.7;
+  font-size: 1.05rem;
+  margin-bottom: 1.5rem;
+  color: #333;
+}
+
+.section-content .btn {
+  background: var(--color-accent);
+  color: white;
+  padding: 0.7rem 1.4rem;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.section-content .btn:hover {
+  background: var(--color-secondary);
+  color: var(--color-primary);
+}
+
+@media (max-width: 900px) {
+  .section {
+    flex-direction: column;
+    text-align: center;
+    padding: 4rem 5%;
+  }
+
+  .section img {
+    width: 100%;
+  }
+}
+
 
 /* ===== FEATURED / EVENTS GRID ===== */
 .featured-events,
@@ -696,4 +835,104 @@ footer {
 .quick-announcements li {
   margin: 0.5rem 0;
   font-weight: 500;
+}
+
+/* ===== MOTTO CONTENT SECTIONS ===== */
+.motto-content {
+  display: none;
+  max-width: 700px;
+  margin: 2rem auto 0;
+  background: #f8f8f8;
+  padding: 1.5rem 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  transition: all 0.4s ease;
+}
+
+.motto-content.active {
+  display: block;
+  animation: fadeInUp 0.6s ease forwards;
+}
+
+.motto-content h3 {
+  color: var(--color-primary);
+  margin-bottom: 0.5rem;
+}
+
+.motto-content p {
+  font-size: 1rem;
+  color: #3006e8;
+  margin-bottom: 1rem;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===== MOTTO SECTION ===== */
+.motto-section {
+  text-align: center;
+  margin: 4rem 0 2rem;
+  font-family: 'Poppins', sans-serif;
+}
+
+.motto-section h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.motto-word {
+  color: var(--color-secondary);
+  cursor: pointer;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.motto-word:hover {
+  color: var(--color-primary);
+  transform: scale(1.1);
+}
+
+.motto-section p {
+  font-size: 1rem;
+  color: #3612d4;
+  margin-top: 0.5rem;
+}
+
+.motto-section {
+  text-align: center;
+  padding: 4rem 2rem;
+  background-color: #fafafa; /* Light neutral background for contrast */
+  border-top: 2px solid #e5e5e5;
+  border-bottom: 2px solid #e5e5e5;
+}
+
+.motto-section h2 {
+  font-size: 2rem;
+  letter-spacing: 2px;
+  color: #1010e6;
+  margin-bottom: 0.5rem;
+}
+
+.motto-section p {
+  color: #0e3de7;
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+}
+
+.motto-word {
+  cursor: pointer;
+  transition: color 0.3s ease;
+  font-weight: 600;
+}
+
+.motto-word:hover {
+  color: var(--color-primary);
 }

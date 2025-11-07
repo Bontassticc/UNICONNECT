@@ -7,109 +7,134 @@
     <link rel="stylesheet" href="./CSS/base.css">
 </head>
 <body>
-     <header>
-    <nav class="navbar">
-      <div class="logo">
-        <a href="/index.html">UniConnect</a>
-      </div>
-      <ul class="nav-links">
-        <li><a href="./index.html" class="active">Home</a></li>
-        <li><a href="./Events/events.html">Events</a></li>
-        <li><a href="./Events/add-events.html">Add Event</a></li>
-        <li><a href="./NoticeBoard/notice-board.html">NoticeBoard</a></li>
-        <li><a href="./about.html">About</a></li>
-      </ul>
+   <header id="navbar" class="navbar">
+  <div class="nav-container">
+    <h1 class="logo">UniConnect</h1>
+    <nav id="nav-menu" class="nav-menu">
+      <a href="./index.html" class="nav-link">Home</a>
+      <a href="./Events/events.html" class="nav-link">Events</a>
+      <a href="./Events/add-events.html" class="nav-link">Add Event</a>
+      <a href="./NoticeBoard/notice-board.html" class="nav-link">NoticeBoard</a>
+      <a href="./about.html" class="nav-link">About</a>
     </nav>
-  </header>
-
-  <!-- ===== HERO SECTION ===== -->
- <section class="hero">
-    <h1>Discover. Connect. Attend.</h1>
-    <p>Your one-stop hub for all university events.</p>
-    <div class="hero-buttons">
-      <a href="./Events/events.html" class="btn">Explore Events</a>
-      <a href="./Events/add-events.html" class="btn btn-secondary">Add Your Event</a>
+    <div class="nav-toggle" id="nav-toggle">
+      <span></span>
+      <span></span>
+      <span></span>
     </div>
-  </section>
+  </div>
+</header>
 
-  <!-- ===== FEATURED EVENTS ===== -->
-  <section class="featured-events" id="featured-events">
-  <h2>Featured Events</h2>
+ <!-- ===== HERO SECTION ===== -->
+<section class="hero">
+  <div class="hero-content">
+    <div class="hero-text">
+      <h1> <a href="#discover">Discover</a> · 
+           <a href="#connect">Connect</a> ·
+       <a href="#attend">Attend</a> </h1>
+      <p>Your one-stop hub for all university events — academic, social & creative!</p>
+
+    
+    </div>
 </section>
 
-<!-- ===== CATEGORIES ===== -->
-  <section class="categories">
-    <h2>Browse by Category</h2>
-    <div class="category-grid">
-      <div class="category-card academic">Academic</div>
-      <div class="category-card social">Social</div>
-      <div class="category-card sports">Sports</div>
-      <div class="category-card creative">Creative</div>
-      <div class="category-card wellness">Wellness</div>
-    </div>
-  </section>
+<!-- ===== DISCOVER SECTION ===== -->
+<section id="discover" class="section discover">
+  <div class="section-content">
+    <h2>Discover</h2>
+    <p>Explore what’s happening across South Africa’s top universities — from Wits to UCT, UP, and beyond. UniConnect curates academic, social, and creative experiences that match your interests and help you make the most of campus life.</p>
+    <a href="./Events/events.html" class="btn">Browse Events</a>
+  </div>
+  <img src="./Images/wits trumpets.jpg" alt="Students discovering campus life">
+</section>
 
-  <!-- ===== SPOTLIGHT EVENT ===== -->
-  <section class="spotlight-event">
-    <h2>Spotlight Event</h2>
+<!-- ===== CONNECT SECTION ===== -->
+<section id="connect" class="section connect">
+  <img src="./Images/Wits students.jpg" alt="Students connecting">
+  <div class="section-content">
+    <h2>Connect</h2>
+    <p>Build your community. Join societies, collaborate on projects, or meet students from different universities. UniConnect helps you find people who share your passions and goals — whether academic, creative, or social.</p>
+    <a href="./Events/add-events.html" class="btn">Host a Club Event</a>
+  </div>
+</section>
 
-    <div class="spotlight-card">
-      <img src="./Images/concert.jpg" alt="Spotlight Event">
-      <div class="spotlight-info">
-        <h3>Campus Music Night</h3>
-        <p>Join us for live music by student bands & DJs under the stars!</p>
-        <p>📅 12 November 2025 | 📍 Main Quad</p>
-        <a href="./Events/events.html" class="btn btn-small">See Event</a>
-      </div>
+<!-- ===== ATTEND SECTION ===== -->
+<section id="attend" class="section attend">
+  <div class="section-content">
+    <h2>Attend</h2>
+    <p>Be part of something exciting — concerts, debates, workshops, and more. Our curated calendar makes it easy to find events near you, stay updated, and never miss what’s happening at your university or beyond.</p>
+    <a href="./Events/events.html" class="btn">View Upcoming Events</a>
+  </div>
+  <img src="./Images/Wits freshers 2025.jpg" alt="Students attending an event">
+</section>
+
+
+
+<!-- ===== FEATURED EVENTS ===== -->
+<section class="featured-events" id="featured-events"> <h2>Featured Events</h2> </section>
+
+<!-- ===== CATEGORY SECTION ===== -->
+<section class="categories">
+  <h2>Browse by Category</h2>
+  <div class="category-grid">
+    <div class="category-card academic">🎓 Academic</div>
+    <div class="category-card social">🎉 Social</div>
+    <div class="category-card sports">⚽ Sports</div>
+    <div class="category-card creative">🎨 Creative</div>
+    <div class="category-card wellness">🌿 Wellness</div>
+  </div>
+</section>
+
+<!-- ===== SPOTLIGHT EVENT ===== -->
+<section class="spotlight-event">
+  <h2>✨ Spotlight Event</h2>
+  <div class="spotlight-card">
+    <img src="./Images/concert.jpg" alt="Spotlight Event">
+    <div class="spotlight-info">
+      <h3>Campus Music Night</h3>
+      <p>Join us for an unforgettable night of student performances, good vibes & food trucks!</p>
+      <p>📅 12 November 2025 | 📍 Wits University – Main Quad</p>
+      <a href="./Events/events.html" class="btn btn-small">See Event</a>
     </div>
-  </section>
+  </div>
+</section>
 
 <!-- ===== CAMPUS STATS ===== -->
-  <section class="campus-stats">
-    <h2>Campus Vibe</h2>
-    <div class="stats-grid">
-      <div class="stat-card">
-        <span class="stat-icon">🎉</span>
-        <h3>120+</h3>
-        <p>Events Hosted</p>
-      </div>
-      <div class="stat-card">
-        <span class="stat-icon">🏫</span>
-        <h3>30+</h3>
-        <p>Clubs & Societies</p>
-      </div>
-      <div class="stat-card">
-        <span class="stat-icon">👩‍🎓👨‍🎓</span>
-        <h3>5000+</h3>
-        <p>Students Connected</p>
-      </div>
-    </div>
-  </section>
+<section class="campus-stats">
+  <h2>Campus Vibe</h2>
+  <div class="stats-grid">
+    <div class="stat-card"><span>🎉</span><h3>120+</h3><p>Events Hosted</p></div>
+    <div class="stat-card"><span>🏫</span><h3>30+</h3><p>Clubs & Societies</p></div>
+    <div class="stat-card"><span>👩‍🎓👨‍🎓</span><h3>5000+</h3><p>Students Connected</p></div>
+  </div>
+</section>
 
-  <!-- ===== TESTIMONIALS ===== -->
-  <section class="testimonials">
-    <h2>What Students Say</h2>
-    <div class="testimonials-grid">
-      <div class="testimonial-card">
-        <img src="./Images/Student 1.jpg" alt="Student 1">
-        <p>"UniConnect events are the highlight of my semester! So fun and organized."</p>
-        <span>- Sarah M.</span>
-      </div>
-      <div class="testimonial-card">
-        <img src="./Images/Student 2.jpg" alt="Student 2">
-        <p>"I discovered so many clubs I never knew existed. Truly awesome platform!"</p>
-        <span>- Thabo K.</span>
-      </div>
-      <div class="testimonial-card">
-        <img src="assets/images/student3.jpg" alt="Student 3">
-        <p>"I met amazing people at events I wouldn't have attended otherwise."</p>
-        <span>- Lindiwe P.</span>
-      </div>
+<!-- ===== TESTIMONIALS ===== -->
+<section class="testimonials">
+  <h2>What Students Say</h2>
+  <div class="testimonials-grid">
+    <div class="testimonial-card">
+      <img src="./Images/Student1.jpg" alt="Student 1">
+      <p>"UniConnect events are the highlight of my semester! So fun and organized."</p>
+      <span>- Sarah M.</span>
     </div>
-  </section>
+    <div class="testimonial-card">
+      <img src="./Images/Student2.jpg" alt="Student 2">
+      <p>"I discovered so many clubs I never knew existed. Truly awesome platform!"</p>
+      <span>- Thabo K.</span>
+    </div>
+    <div class="testimonial-card">
+      <img src="./Images/Student3.jpg" alt="Student 3">
+      <p>"I met amazing people at events I wouldn't have attended otherwise."</p>
+      <span>- Lindiwe P.</span>
+    </div>
+  </div>
+</section>
+
   
-
+<script src="./JS/main.js"></script>
 <script src="./JS/events.js"></script>
+<script src="./JS/form.js"></script> <!-- form handling -->
 
   <footer>
     <p>© 2025 UniConnect Events | Made by Bonolo</p>
