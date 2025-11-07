@@ -132,7 +132,7 @@ document.querySelectorAll(".btn").forEach((btn) => {
 
 // ===== HERO LINE MOTIONPATH ANIMATION =====
 gsap.from("#connectPath", {
-  duration: 5,
+  duration: 2,
   drawSVG: "0%",
   ease: "power2.inOut"
 });
