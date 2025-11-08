@@ -1422,4 +1422,79 @@ footer {
   line-height: 1.6;
 }
 
+/* ===== FOOTER STYLING ===== */
+.site-footer {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  color: #fff;
+  padding: 3rem 1.5rem 1rem;
+  margin-top: 4rem;
+}
+
+.footer-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2rem;
+  align-items: start;
+}
+
+.site-footer h3, 
+.site-footer h4 {
+  color: #f2a65a;
+  margin-bottom: 0.8rem;
+}
+
+.footer-about p {
+  color: #ddd;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.footer-links ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-links li {
+  margin-bottom: 0.5rem;
+}
+
+.footer-links a {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: #f2a65a;
+}
+
+.footer-contact p,
+.footer-contact a {
+  color: #ddd;
+  font-size: 0.95rem;
+}
+
+.footer-contact .socials a {
+  margin-right: 10px;
+  color: #f2a65a;
+  font-size: 1.2rem;
+  transition: opacity 0.3s ease;
+}
+
+.footer-contact .socials a:hover {
+  opacity: 0.7;
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  padding-top: 1rem;
+  font-size: 0.85rem;
+  color: #ccc;
+}
+
+
 
