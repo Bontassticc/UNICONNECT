@@ -2,12 +2,13 @@
 const addEventForm = document.getElementById("addEventForm");
 const formSuccess = document.getElementById("formSuccess");
 
+
 // Only run if the form exists
 if (addEventForm) {
 
   const inputs = addEventForm.querySelectorAll("input, textarea, select");
 
-  // ===== REAL-TIME VALIDATION =====
+  // REAL-TIME VALIDATION //
   inputs.forEach(input => {
     input.addEventListener("input", () => {
       const error = input.nextElementSibling;
@@ -49,7 +50,7 @@ if (addEventForm) {
     });
   });
 
-  // ===== SUBMIT FORM =====
+  // SUBMIT FORM //
   addEventForm.addEventListener("submit", function(e) {
     e.preventDefault(); // prevent reload
 
@@ -67,9 +68,9 @@ if (addEventForm) {
 
     if (!isValid) return;
 
-    // ===== COLLECT DATA =====
+    // COLLECT DATA //
     const newEvent = {
-      name: document.getElementById("eventName").value,
+      title: document.getElementById("eventName").value,
       date: document.getElementById("eventDate").value,
       location: document.getElementById("eventLocation").value,
       category: document.getElementById("eventCategory").value,
@@ -78,14 +79,20 @@ if (addEventForm) {
       featured: false
     };
 
-    // ===== ADD TO EVENTS DATA =====
+    // ADD TO EVENTS DATA (doesnt want to work for some reason)//
     eventsData.push(newEvent);
 
-    // ===== REFRESH EVENTS =====
+    //SAVE TO LOCAL STORAGE//
+    let storedEvents = JSON.parse(localStorage.getItem("eventsData")) || [];
+    storedEvents.push(newEvent);
+    localStorage.setItem("eventsData", JSON.stringify(storedEvents));
+
+
+    // REFRESH EVENTS //
     if (document.getElementById("events-list")) displayEvents(eventsData);
     if (document.getElementById("featured-events")) displayFeaturedEvents();
 
-    // ===== RESET FORM & SUCCESS MESSAGE =====
+    // RESET FORM & SUCCESS MESSAGE //
     addEventForm.reset();
     inputs.forEach(input => input.style.borderColor = ""); // reset borders
     formSuccess.style.display = "block";

@@ -1,4 +1,4 @@
-// NAV TOGGLE FOR MOBILE
+// NAV TOGGLE FOR MOBILE//
 const navToggle = document.getElementById("nav-toggle");
 const navMenu = document.getElementById("nav-menu");
 const navbar = document.getElementById("navbar");
@@ -8,7 +8,7 @@ navToggle.addEventListener("click", () => {
   navToggle.classList.toggle("open");
 });
 
-// CHANGE NAV STYLE ON SCROLL
+// CHANGE NAV STYLE ON SCROLL//
 window.addEventListener("scroll", () => {
   if (window.scrollY > 50) {
     navbar.classList.add("scrolled");
@@ -17,7 +17,7 @@ window.addEventListener("scroll", () => {
   }
 });
 
-// ===== TICKETMASTER API =====
+// MY TICKETMASTER API //
 const ticketmasterApiKey = "5ooJdSWCZ0yHV2SFYft8JbQHPwUpeWpn"; // replace with your key
 const tmEventsContainer = document.getElementById("ticketmaster-events");
 
@@ -64,10 +64,10 @@ if (tmEventsContainer) {
     });
 }
 
-// ===== HOMEPAGE GSAP ANIMATIONS =====
+// HOMEPAGE GSAP ANIMATIONS//
 gsap.registerPlugin(ScrollTrigger, MotionPathPlugin);
 
-// --- 1. Timeline Animation: Hero intro ---
+// Timeline Animation: Hero intro//
 const heroTl = gsap.timeline({ defaults: { duration: 1, ease: "power2.out" } });
 
 heroTl
@@ -75,7 +75,7 @@ heroTl
   .from(".hero p", { y: 30, opacity: 0 }, "-=0.5")
   .from(".hero .btn", { scale: 0.8, opacity: 0 }, "-=0.3");
 
-// --- 2. ScrollTrigger Animations ---
+// ScrollTrigger Animations//
 gsap.from(".spotlight-event", {
   scrollTrigger: {
     trigger: ".spotlight-event",
@@ -96,7 +96,7 @@ gsap.from(".testimonials", {
   duration: 1,
 });
 
-// --- 3. MotionPath Animation (small floating icon) ---
+//MotionPath Animation (small floating icon) //
 const floatingIcon = document.createElementNS("http://www.w3.org/2000/svg", "svg");
 floatingIcon.setAttribute("class", "motion-icon");
 floatingIcon.setAttribute("width", "60");
@@ -120,7 +120,7 @@ gsap.to(".motion-icon", {
   },
 });
 
-// --- 4. Hover Animation on Buttons ---
+// Hover Animation on Buttons //
 document.querySelectorAll(".btn").forEach((btn) => {
   btn.addEventListener("mouseenter", () => {
     gsap.to(btn, { scale: 1.05, duration: 0.3, ease: "power1.out" });
@@ -130,7 +130,7 @@ document.querySelectorAll(".btn").forEach((btn) => {
   });
 });
 
-// ===== HERO LINE MOTIONPATH ANIMATION =====
+// HERO LINE MOTIONPATH ANIMATION //
 gsap.from("#connectPath", {
   duration: 2,
   drawSVG: "0%",

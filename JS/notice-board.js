@@ -1,11 +1,13 @@
-// ===== GLOBAL EVENTS DATA =====
+
+
 const eventsData = [
   { date: "2025-11-10", title: "Study Night", location: "Wits University" },
   { date: "2025-11-15", title: "Campus Festival", location: "UCT" },
   { date: "2025-11-25", title: "Midterm Break Starts", location: "UP" },
+
 ];
 
-// ===== CALENDAR LOGIC =====
+// CALENDAR LOGIC //
 const calendar = document.getElementById("calendar");
 const monthYear = document.getElementById("monthYear");
 const prevMonthBtn = document.getElementById("prevMonth");
@@ -49,9 +51,9 @@ renderCalendar(currentDate);
 const weatherDiv = document.getElementById("weather");
 const cityInput = document.getElementById("cityInput");
 const searchBtn = document.getElementById("weatherSearchBtn");
-const apiKey = "7c29c5fa84eea9dfff6b081d13cbf057"; // your key
+const apiKey = "7c29c5fa84eea9dfff6b081d13cbf057";
 
-// Function to fetch and display weather
+// Function to fetch and display weather//
 async function fetchWeather(city) {
   weatherDiv.innerHTML = "<p>Loading weather...</p>";
 
@@ -61,18 +63,18 @@ async function fetchWeather(city) {
     );
     const data = await res.json();
 
-    // Handle errors
+    // Handle errors//
     if (data.cod !== 200) {
       weatherDiv.innerHTML = `<p>City not found: ${city}</p>`;
       return;
     }
 
-    // Extract weather info
+    // Extract weather info//
     const temp = Math.round(data.main.temp);
     const desc = data.weather[0].description;
     const icon = `https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`;
 
-    // Display results
+    // Display results//
     weatherDiv.innerHTML = `
       <div style="display:flex;align-items:center;gap:10px;">
         <img src="${icon}" alt="${desc}" width="50">
@@ -88,16 +90,16 @@ async function fetchWeather(city) {
   }
 }
 
-// Default city on load
+// Default city on load//
 fetchWeather("Johannesburg");
 
-// Search button click
+// Search button click//
 searchBtn.addEventListener("click", () => {
   const city = cityInput.value.trim();
   if (city) fetchWeather(city);
 });
 
-// Allow pressing Enter to search
+// Allow pressing Enter to search//
 cityInput.addEventListener("keypress", (e) => {
   if (e.key === "Enter") {
     const city = cityInput.value.trim();
@@ -105,13 +107,13 @@ cityInput.addEventListener("keypress", (e) => {
   }
 });
 
-// ===== MAP LOGIC (Leaflet.js) =====
+// MAP LOGIC (Using Leaflet.js for my map hehe) //
 const map = L.map('map').setView([-26.2041,28.0473], 6); // Default: South Africa
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{
   maxZoom:19,
 }).addTo(map);
 
-// Map markers from eventsData
+// Map markers from eventsData//
 const campusCoords = { "Wits University":[-26.1882,28.0300], "UCT":[-33.9570,18.4609], "UP":[-25.7540,28.2314] };
 eventsData.forEach(event=>{
   const coords = campusCoords[event.location];
@@ -119,7 +121,7 @@ eventsData.forEach(event=>{
 });
 
 eventsData.forEach(event => {
-  const coords = getCoords(event.location); // a function mapping campus names to lat/lng
+  const coords = getCoords(event.location); 
   if (coords) {
     L.marker(coords).addTo(map)
       .bindPopup(`<b>${event.title}</b><br>${event.date}`);
@@ -129,5 +131,5 @@ eventsData.forEach(event => {
 
 
 
-// ===== GSAP Fade-in for Cohesion =====
+// GSAP Fade-in for Cohesion //
 gsap.from(".glass-card", {opacity:0, y:30, duration:0.8, stagger:0.2, ease:"power2.out"});

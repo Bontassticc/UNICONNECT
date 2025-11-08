@@ -85,7 +85,7 @@ const eventsData = [
   },
 
 
-  // 🎨 Creative & Cultural
+  // Creative & Cultural
 
   {
     name: "Student Art Exhibition",
@@ -113,7 +113,7 @@ const eventsData = [
     img: "../Images/Theater.jpg"
   },
 
-  // 💕 Wellness & Personal Growth
+  // Wellness & Personal Growth
   
   
   {
@@ -126,7 +126,7 @@ const eventsData = [
   },
   
 
-  // ⚽ Sports & Competition
+  // Sports & Competition
   {
     name: "5K Fun Run",
     category: "sports",
@@ -147,19 +147,19 @@ const eventsData = [
 ];
 
 
-// 🎨 Assign each category a fun color
+// Colour Category //
 function getCategoryColor(category) {
   switch (category) {
     case "academic":
-      return "var(--color-accent)";   // Blue tone
+      return "var(--color-accent)";   
     case "social":
-      return "var(--color-primary)";  // Pink tone
+      return "var(--color-primary)";  
     case "sports":
-      return "var(--color-secondary)"; // Yellow tone
+      return "var(--color-secondary)"; 
     case "wellness":
-      return "#7dd3a9"; //mint tone
+      return "#7dd3a9"; 
       case "creative":
-      return "#b28efc"; //purple tone
+      return "#b28efc"; 
     default:
       return "#ccc";
   }
