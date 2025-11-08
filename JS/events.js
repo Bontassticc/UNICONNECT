@@ -12,7 +12,7 @@ const eventsData = [
     desc: "Join us for live music by student bands & DJs under the stars!",
     date: "2025-11-12",
     location: "Wits University",
-    img: "/Images/Party.jpg"
+    img: "../Images/Party.jpg"
   },
   {
     name: "Career Fair 2025",
