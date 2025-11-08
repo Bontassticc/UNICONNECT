@@ -45,18 +45,17 @@ prevMonthBtn.addEventListener("click",()=>{currentDate.setMonth(currentDate.getM
 nextMonthBtn.addEventListener("click",()=>{currentDate.setMonth(currentDate.getMonth()+1); renderCalendar(currentDate);});
 renderCalendar(currentDate);
 
-// ===== WEATHER LOGIC =====
 const weatherDiv = document.getElementById("weather");
 const cityInput = document.getElementById("cityInput");
 const searchBtn = document.getElementById("weatherSearchBtn");
-const apiKey = "YOUR_API_KEY_HERE"; // <-- replace with your key
+const apiKey = "YOUR_API_KEY"; // replace with your OpenWeather API key
 
 async function fetchWeather(city){
   weatherDiv.innerHTML = "<p>Loading weather...</p>";
-  try{
+  try {
     const res = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`);
     const data = await res.json();
-    if(data.cod!==200) { weatherDiv.innerHTML="<p>City not found</p>"; return;}
+    if(data.cod !== 200){ weatherDiv.innerHTML="<p>City not found</p>"; return; }
     const temp = Math.round(data.main.temp);
     const desc = data.weather[0].description;
     const icon = `http://openweathermap.org/img/wn/${data.weather[0].icon}.png`;
@@ -65,13 +64,19 @@ async function fetchWeather(city){
       <p>${city}</p>
       <p>${temp}°C | ${desc}</p>
     `;
-  }catch(err){ weatherDiv.innerHTML="<p>Unable to load weather</p>"; }
+  } catch(err){
+    console.error(err);
+    weatherDiv.innerHTML="<p>Unable to load weather</p>";
+  }
 }
 
-// Default city
+// default city
 fetchWeather("Johannesburg");
-searchBtn.addEventListener("click",()=>{ const city = cityInput.value.trim(); if(city) fetchWeather(city); });
-cityInput.addEventListener("keypress",(e)=>{ if(e.key==="Enter"){ const city = cityInput.value.trim(); if(city) fetchWeather(city); }});
+
+// button & enter key search
+searchBtn.addEventListener("click", ()=>{ if(cityInput.value.trim()) fetchWeather(cityInput.value.trim()); });
+cityInput.addEventListener("keypress", e=>{ if(e.key==="Enter" && cityInput.value.trim()) fetchWeather(cityInput.value.trim()); });
+
 
 // ===== MAP LOGIC (Leaflet.js) =====
 const map = L.map('map').setView([-26.2041,28.0473], 6); // Default: South Africa
@@ -93,6 +98,8 @@ eventsData.forEach(event => {
       .bindPopup(`<b>${event.title}</b><br>${event.date}`);
   }
 });
+
+
 
 
 // ===== GSAP Fade-in for Cohesion =====
