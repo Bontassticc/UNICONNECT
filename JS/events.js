@@ -3,6 +3,7 @@ const searchBar = document.getElementById("searchBar");
 const filterCategory = document.getElementById("filterCategory");
 const eventsList = document.getElementById("events-list");
 
+
 // Event Data
 const eventsData = [
   {
@@ -11,7 +12,7 @@ const eventsData = [
     desc: "Join us for live music by student bands & DJs under the stars!",
     date: "2025-11-12",
     location: "Wits University",
-    img: "../Images/Party.jpg"
+    img: "/Images/Party.jpg"
   },
   {
     name: "Career Fair 2025",
@@ -198,6 +199,7 @@ function displayFeaturedEvents() {
         <p class="event-date">📅 ${new Date(event.date).toDateString()}</p>
       </div>
     `;
+    
 
     card.addEventListener("click", () => {
       window.location.href = "Events/events.html";

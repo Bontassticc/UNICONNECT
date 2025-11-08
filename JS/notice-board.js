@@ -3,7 +3,8 @@
 const eventsData = [
   { date: "2025-11-10", title: "Study Night", location: "Wits University" },
   { date: "2025-11-15", title: "Campus Festival", location: "UCT" },
-  { date: "2025-11-25", title: "Midterm Break Starts", location: "UP" },
+  { date: "2025-11-28", title: "Holiday Break Starts", location: "UP" },
+  { date: "2025-12-2",  title: "End Year Bash", location: "DUT" },
 
 ];
 
@@ -114,7 +115,7 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{
 }).addTo(map);
 
 // Map markers from eventsData//
-const campusCoords = { "Wits University":[-26.1882,28.0300], "UCT":[-33.9570,18.4609], "UP":[-25.7540,28.2314] };
+const campusCoords = { "Wits University":[-26.1882,28.0300], "UCT":[-33.9570,18.4609], "UP":[-25.7540,28.2314], "DUT":[-29.8496,31.0103] };
 eventsData.forEach(event=>{
   const coords = campusCoords[event.location];
   if(coords) L.marker(coords).addTo(map).bindPopup(`<b>${event.title}</b><br>${event.date}`);
