@@ -48,7 +48,7 @@ renderCalendar(currentDate);
 const weatherDiv = document.getElementById("weather");
 const cityInput = document.getElementById("cityInput");
 const searchBtn = document.getElementById("weatherSearchBtn");
-const apiKey = "YOUR_API_KEY"; // replace with your OpenWeather API key
+const apiKey = "7c29c5fa84eea9dfff6b081d13cbf057"; // replace with your OpenWeather API key
 
 async function fetchWeather(city){
   weatherDiv.innerHTML = "<p>Loading weather...</p>";
