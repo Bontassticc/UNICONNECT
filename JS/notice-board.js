@@ -45,38 +45,65 @@ prevMonthBtn.addEventListener("click",()=>{currentDate.setMonth(currentDate.getM
 nextMonthBtn.addEventListener("click",()=>{currentDate.setMonth(currentDate.getMonth()+1); renderCalendar(currentDate);});
 renderCalendar(currentDate);
 
+//weather//
 const weatherDiv = document.getElementById("weather");
 const cityInput = document.getElementById("cityInput");
 const searchBtn = document.getElementById("weatherSearchBtn");
-const apiKey = "7c29c5fa84eea9dfff6b081d13cbf057"; // replace with your OpenWeather API key
+const apiKey = "7c29c5fa84eea9dfff6b081d13cbf057"; // your key
 
-async function fetchWeather(city){
+// Function to fetch and display weather
+async function fetchWeather(city) {
   weatherDiv.innerHTML = "<p>Loading weather...</p>";
+
   try {
-    const res = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`);
+    const res = await fetch(
+      `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`
+    );
     const data = await res.json();
-    if(data.cod !== 200){ weatherDiv.innerHTML="<p>City not found</p>"; return; }
+
+    // Handle errors
+    if (data.cod !== 200) {
+      weatherDiv.innerHTML = `<p>City not found: ${city}</p>`;
+      return;
+    }
+
+    // Extract weather info
     const temp = Math.round(data.main.temp);
     const desc = data.weather[0].description;
-    const icon = `http://openweathermap.org/img/wn/${data.weather[0].icon}.png`;
+    const icon = `https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`;
+
+    // Display results
     weatherDiv.innerHTML = `
-      <img src="${icon}" alt="${desc}">
-      <p>${city}</p>
-      <p>${temp}°C | ${desc}</p>
+      <div style="display:flex;align-items:center;gap:10px;">
+        <img src="${icon}" alt="${desc}" width="50">
+        <div>
+          <p style="margin:0;font-weight:bold;">${data.name}</p>
+          <p style="margin:0;">${temp}°C | ${desc}</p>
+        </div>
+      </div>
     `;
-  } catch(err){
-    console.error(err);
-    weatherDiv.innerHTML="<p>Unable to load weather</p>";
+  } catch (err) {
+    console.error("Weather fetch error:", err);
+    weatherDiv.innerHTML = "<p>Error loading weather data.</p>";
   }
 }
 
-// default city
+// Default city on load
 fetchWeather("Johannesburg");
 
-// button & enter key search
-searchBtn.addEventListener("click", ()=>{ if(cityInput.value.trim()) fetchWeather(cityInput.value.trim()); });
-cityInput.addEventListener("keypress", e=>{ if(e.key==="Enter" && cityInput.value.trim()) fetchWeather(cityInput.value.trim()); });
+// Search button click
+searchBtn.addEventListener("click", () => {
+  const city = cityInput.value.trim();
+  if (city) fetchWeather(city);
+});
 
+// Allow pressing Enter to search
+cityInput.addEventListener("keypress", (e) => {
+  if (e.key === "Enter") {
+    const city = cityInput.value.trim();
+    if (city) fetchWeather(city);
+  }
+});
 
 // ===== MAP LOGIC (Leaflet.js) =====
 const map = L.map('map').setView([-26.2041,28.0473], 6); // Default: South Africa
