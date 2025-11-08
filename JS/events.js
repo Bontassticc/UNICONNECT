@@ -109,7 +109,7 @@ const eventsData = [
     category: "creative",
     desc: "Catch the drama society’s latest performance live at the theatre.",
     date: "2025-09-29",
-    location: "Universit of Zululand",
+    location: "University of Zululand",
     img: "../Images/Theater.jpg"
   },
 
@@ -141,7 +141,7 @@ const eventsData = [
     desc: "Compete in FIFA, Tekken, and more for cash prizes.",
     date: "2025-10-15",
     location: "Wits University",
-    img: "../Images/exibition.jpg"
+    img: "../Images/esports.jpg"
   },
 
 ];

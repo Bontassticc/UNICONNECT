@@ -155,3 +155,19 @@ gsap.to("#connectPath", {
     );
   }
 });
+
+
+gsap.from(".mission-card", {
+  scrollTrigger: { trigger: ".mission-section", start: "top 80%" },
+  y: 40,
+  opacity: 0,
+  stagger: 0.2,
+  duration: 1
+});
+
+gsap.from(".story-img", {
+  scrollTrigger: { trigger: ".story", start: "top 75%" },
+  x: 100,
+  opacity: 0,
+  duration: 1.2
+});

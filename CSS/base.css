@@ -1496,5 +1496,66 @@ footer {
   color: #ccc;
 }
 
+.about-hero {
+  background: linear-gradient(to right, #004e92, #000428);
+  color: white;
+  text-align: center;
+  padding: 5rem 2rem;
+  border-radius: 0 0 40px 40px;
+}
+
+.about-hero h1 {
+  font-size: 2.5rem;
+  font-family: var(--font-secondary);
+}
+
+.about-hero p {
+  font-size: 1.2rem;
+  max-width: 600px;
+  margin: 1rem auto 0;
+}
+
+.mission-section {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  padding: 3rem 2rem;
+  text-align: center;
+}
+
+.mission-card {
+  background: rgba(255,255,255,0.7);
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+}
+
+.story {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  padding: 4rem 2rem;
+  flex-wrap: wrap;
+}
+
+.story-text {
+  flex: 1;
+}
+
+.story-img {
+  flex: 1;
+  max-width: 400px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.about-quote {
+  text-align: center;
+  font-style: italic;
+  margin: 4rem 2rem;
+  color: var(--color-primary);
+}
+
 
 
