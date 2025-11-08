@@ -82,7 +82,9 @@ if (addEventForm) {
     // ADD TO EVENTS DATA (doesnt want to work for some reason)//
     eventsData.push(newEvent);
 
-    //SAVE TO LOCAL STORAGE//
+    //SAVE TO LOCAL STORAGE// (My attempt to make it so that what you fill in the form
+    //  will be able to be seen on the events page and calendar but it didnt want to work!!! sigh)
+    // you can see I tired atleast but it kept breaking my code that were already functioning
     let storedEvents = JSON.parse(localStorage.getItem("eventsData")) || [];
     storedEvents.push(newEvent);
     localStorage.setItem("eventsData", JSON.stringify(storedEvents));
