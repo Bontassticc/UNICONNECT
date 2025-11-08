@@ -102,7 +102,7 @@ const eventsData = [
     desc: "Showcasing African films and student short stories.",
     date: "2025-10-22",
     location: "Wits University",
-    img: "../Images/Film and Chill.jpg"
+    img: "../Images/Film and chill.jpg"
   },
 
   {
